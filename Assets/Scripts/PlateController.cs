@@ -11,7 +11,7 @@ public class PlateController : MonoBehaviour
     public Slider scaleSlider;
     public Slider rotateSlider;
 
-    private RectTransform rectTransform;
+  //  private RectTransform rectTransform;
 
     [SerializeField]
     private Button firstRing;
@@ -24,9 +24,9 @@ public class PlateController : MonoBehaviour
         RotateButton.onClick.AddListener(StartRotationAnimation);
         rotateSlider = GameObject.Find("RotateSlider").GetComponent<Slider>();
         initScaleSclider();
-        firstRing = GameObject.Find("FirstRing").GetComponent<Button>();
-        rectTransform = firstRing.GetComponent<RectTransform>();
-        firstRing.onClick.AddListener(ShowDebugText);
+       // firstRing = GameObject.Find("FirstRing").GetComponent<Button>();
+     //   rectTransform = firstRing.GetComponent<RectTransform>();
+      //  firstRing.onClick.AddListener(ShowDebugText);
     }
 
     private void initScaleSclider() {
@@ -39,7 +39,7 @@ public class PlateController : MonoBehaviour
     void Update() {
         var newScale = new Vector3(scaleSlider.value, scaleSlider.value, scaleSlider.value);
         transform.localScale = newScale;
-        rectTransform.transform.localScale = transform.localScale;
+        //rectTransform.transform.localScale = transform.localScale;
        if(isRotating){
             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         } else {

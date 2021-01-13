@@ -44,6 +44,11 @@
     <key>UIRequiredDeviceCapabilities</key>
     <array>
       <string>armv7</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
       <string>metal</string>
       <string>arkit</string>
     </array>
@@ -65,8 +70,8 @@
     <key>Unity_LoadingActivityIndicatorStyle</key>
     <integer>-1</integer>
     <key>UnityCloudProjectID</key>
-    <string></string>
+    <string />
     <key>UnityCrashSubmissionURL</key>
-    <string></string>
+    <string />
   </dict>
 </plist>
