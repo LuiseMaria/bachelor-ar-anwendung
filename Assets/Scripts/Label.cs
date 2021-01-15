@@ -34,7 +34,7 @@ public RectTransform target;
         lineRenderer.startWidth = 0.005f;
         lineRenderer.material.color = myButtonsColor;
         lineRenderer.SetPosition(0, transform.position);
-      //  Vector3 posLineTarget = new Vector3(target.transform.position.xMax,  target.transform.position.y, target.transform.position.z);
+    
         target.pivot = new Vector2(1, 0);
         lineRenderer.SetPosition(1, target.transform.position);
     }

@@ -17,7 +17,7 @@
 		<type fullname="UnityEngine.QualitySettings" preserve="nothing"/>
 		<type fullname="UnityEditor.Physics2DSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.MeshRenderer" preserve="nothing"/>
-		<type fullname="UnityEngine.SphereCollider" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.Canvas" preserve="nothing"/>
 		<type fullname="UnityEngine.RectTransform" preserve="nothing"/>
 		<type fullname="UnityEngine.LightmapSettings" preserve="nothing"/>
@@ -32,7 +32,7 @@
 		<type fullname="UnityEngine.Component" preserve="nothing"/>
 		<type fullname="UnityEngine.Transform" preserve="nothing"/>
 		<type fullname="UnityEngine.RenderSettings" preserve="nothing"/>
-		<type fullname="UnityEngine.Collider" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioListener" preserve="nothing"/>
 		<type fullname="UnityEngine.Font" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Light" preserve="nothing"/>
@@ -54,15 +54,10 @@
 		<type fullname="TMPro.TextMeshPro" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.XR.ARFoundation">
-		<type fullname="UnityEngine.XR.ARFoundation.ARCameraBackground" preserve="nothing"/>
-		<type fullname="UnityEngine.XR.ARFoundation.ARCameraManager" preserve="nothing"/>
 		<type fullname="UnityEngine.XR.ARFoundation.ARInputManager" preserve="nothing"/>
 		<type fullname="UnityEngine.XR.ARFoundation.ARRaycastManager" preserve="nothing"/>
 		<type fullname="UnityEngine.XR.ARFoundation.ARSession" preserve="nothing"/>
 		<type fullname="UnityEngine.XR.ARFoundation.ARSessionOrigin" preserve="nothing"/>
-	</assembly>
-	<assembly fullname="UnityEngine.SpatialTracking">
-		<type fullname="UnityEngine.SpatialTracking.TrackedPoseDriver" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
@@ -73,5 +68,15 @@
 		<type fullname="UnityEngine.UI.Image" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Slider" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Text" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="Vuforia.UnityExtensions">
+		<type fullname="Vuforia.ImageTargetBehaviour" preserve="nothing"/>
+		<type fullname="Vuforia.TurnOffBehaviour" preserve="nothing"/>
+		<type fullname="Vuforia.VuforiaBehaviour" preserve="nothing"/>
+		<type fullname="Vuforia.VuforiaConfiguration" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="VuforiaScripts">
+		<type fullname="DefaultInitializationErrorHandler" preserve="nothing"/>
+		<type fullname="DefaultTrackableEventHandler" preserve="nothing"/>
 	</assembly>
 </linker>

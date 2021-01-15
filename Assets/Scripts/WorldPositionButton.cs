@@ -9,26 +9,30 @@ public class WorldPositionButton : MonoBehaviour
     [SerializeField]
     private Transform targetTransform;
 
-   // private RectTransform rectTransform;
 
-    private Image image;
+    public RectTransform rectTransform;
+
+    private Button labelButton;
 
 
     void Awake() {  
-     //   rectTransform = GetComponent<RectTransform>();
-        image = GetComponent<Image>();
+        rectTransform = GetComponent<RectTransform>();
+        labelButton = GetComponent<Button>();
     }
 
-    private void Update()
-    {  
-        var screenPoint = Camera.main.WorldToScreenPoint(targetTransform.position);
-       // rectTransform.position = screenPoint;
+    void Start(){
+        
+    }
 
-        var viewportPoint = Camera.main.WorldToViewportPoint(targetTransform.position);
-        var distanceFromCenter = Vector2.Distance(viewportPoint, Vector2.one * 0.5f);
+    private void Update() {  
+        var targetPosition = targetTransform.position;
+        Vector3 labelPosition = rectTransform.position;
+        rectTransform.position = targetPosition + new Vector3(-0.1f, 0.2f, 0.1f);
 
-        var show = distanceFromCenter < 0.3f;
+      //  float dist = Vector3.Distance(targetPosition, labelPosition);
+      //  rectTransform.position = new Vector3(labelPosition.x + dist, labelPosition.y + dist, labelPosition.z + dist);
+        //var show = distanceFromCenter < 0.3f;
 
-        image.enabled = show;
+    //    labelButton.enabled = show;
     }
 }

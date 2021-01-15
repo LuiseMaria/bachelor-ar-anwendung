@@ -49,6 +49,35 @@
       <string>arkit</string>
       <string>arkit</string>
       <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
+      <string>arkit</string>
       <string>metal</string>
       <string>arkit</string>
     </array>
@@ -63,9 +92,6 @@
     <key>UISupportedInterfaceOrientations</key>
     <array>
       <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
-      <string>UIInterfaceOrientationLandscapeRight</string>
-      <string>UIInterfaceOrientationLandscapeLeft</string>
     </array>
     <key>Unity_LoadingActivityIndicatorStyle</key>
     <integer>-1</integer>

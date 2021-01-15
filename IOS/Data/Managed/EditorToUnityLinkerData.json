@@ -216,9 +216,9 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "SphereCollider",
-            "fullManagedTypeName": "UnityEngine.SphereCollider",
-            "moduleName": "Physics",
+            "nativeClass": "AudioBehaviour",
+            "fullManagedTypeName": "UnityEngine.AudioBehaviour",
+            "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/SampleScene.unity"
             ]
@@ -360,9 +360,9 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "Collider",
-            "fullManagedTypeName": "UnityEngine.Collider",
-            "moduleName": "Physics",
+            "nativeClass": "AudioListener",
+            "fullManagedTypeName": "UnityEngine.AudioListener",
+            "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/SampleScene.unity"
             ]
@@ -505,20 +505,6 @@
         {
             "managedAssemblyName": "Unity.XR.ARFoundation.dll",
             "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.XR.ARFoundation.ARCameraBackground",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
-            "managedAssemblyName": "Unity.XR.ARFoundation.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.XR.ARFoundation.ARCameraManager",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
-            "managedAssemblyName": "Unity.XR.ARFoundation.dll",
-            "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.XR.ARFoundation.ARInputManager",
             "moduleName": "",
             "usedInScenes": []
@@ -541,13 +527,6 @@
             "managedAssemblyName": "Unity.XR.ARFoundation.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.XR.ARFoundation.ARSessionOrigin",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
-            "managedAssemblyName": "UnityEngine.SpatialTracking.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.SpatialTracking.TrackedPoseDriver",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -604,6 +583,48 @@
             "managedAssemblyName": "UnityEngine.UI.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.UI.Text",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Vuforia.UnityExtensions.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "Vuforia.ImageTargetBehaviour",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Vuforia.UnityExtensions.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "Vuforia.TurnOffBehaviour",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Vuforia.UnityExtensions.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "Vuforia.VuforiaBehaviour",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Vuforia.UnityExtensions.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "Vuforia.VuforiaConfiguration",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "VuforiaScripts.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "DefaultInitializationErrorHandler",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "VuforiaScripts.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "DefaultTrackableEventHandler",
             "moduleName": "",
             "usedInScenes": []
         }

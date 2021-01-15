@@ -1,22 +1,3 @@
-﻿#include "il2cpp-config.h"
-
-#ifndef _MSC_VER
-# include <alloca.h>
-#else
-# include <malloc.h>
-#endif
-
-
-
-#include "codegen/il2cpp-codegen.h"
-
-
-
-
-
-IL2CPP_EXTERN_C_BEGIN
-IL2CPP_EXTERN_C_END
-
-
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:6e1aa6d15a4ffbd32d403c8017974f46bd7c8382bcf9ac1322253d01f30f41a3
+size 193
