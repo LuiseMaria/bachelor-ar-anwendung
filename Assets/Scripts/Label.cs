@@ -29,14 +29,15 @@ public RectTransform target;
     }
     // Update is called once per frame
     void Update() {
-        LineRenderer lineRenderer = GetComponent<LineRenderer>();
+       // LineRenderer lineRenderer = GetComponent<LineRenderer>();
         Color myButtonsColor = mybutton.GetComponent<Image>().color;
-        lineRenderer.startWidth = 0.005f;
-        lineRenderer.material.color = myButtonsColor;
-        lineRenderer.SetPosition(0, transform.position);
+   //     lineRenderer.startWidth = 0.005f;
+   //     lineRenderer.material.color = myButtonsColor;
+    //    lineRenderer.SetPosition(0, transform.position);
     
         target.pivot = new Vector2(1, 0);
-        lineRenderer.SetPosition(1, target.transform.position);
+        Gizmos.DrawLine(transform.position, target.transform.position);
+      //  lineRenderer.SetPosition(1, target.transform.position);
     }
 
     //Methode damit Label immer richtung User zeigen

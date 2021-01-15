@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d7f20762f74253acfbf676dffa21e01c7d3c8555013abbe76de95610c67f254
-size 260
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Harry_Potter" size="0.100000 0.140455" />
+  </Tracking>
+</QCARConfig>
