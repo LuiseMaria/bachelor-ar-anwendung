@@ -43,6 +43,7 @@
 		<type fullname="UnityEngine.MeshFilter" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
+		<type fullname="ButtonComponent" preserve="nothing"/>
 		<type fullname="PlateController" preserve="nothing"/>
 		<type fullname="WorldPositionButton" preserve="nothing"/>
 	</assembly>

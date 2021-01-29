@@ -26,6 +26,9 @@ public class WorldPositionButton : MonoBehaviour {
 
     public Button sphinxButton;
 
+  
+
+
 
 
     void Awake() {  
@@ -39,9 +42,12 @@ public class WorldPositionButton : MonoBehaviour {
          lineRenderer.startColor = Color.gray;
          lineRenderer.endColor = Color.black;
         _followOffset = transform.position - targetTransform.position;
-        griffinButton = GameObject.Find("GriffinButton").GetComponent<Button>();
-        sphinxButton = GameObject.Find("SphinxButton").GetComponent<Button>();
-        griffinButton.onClick.AddListener(ButtonClick);
+
+
+      
+        // griffinButton = GameObject.Find("GriffinButton").GetComponent<Button>();
+        // sphinxButton = GameObject.Find("SphinxButton").GetComponent<Button>();
+        // griffinButton.onClick.AddListener(ButtonClick);
     }
   
      
@@ -76,9 +82,9 @@ public class WorldPositionButton : MonoBehaviour {
      void LateUpdate() {
      // damit Label immer richtung User zeigen
         rectTransform.transform.LookAt(cameraToLookAt.transform);
-        //  rectTransform.transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
-       transform.rotation = plateGameObject.transform.rotation;
-       transform.localEulerAngles = plateGameObject.transform.localEulerAngles;
+        rectTransform.transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
+    //   transform.rotation = plateGameObject.transform.rotation;
+     //  transform.localEulerAngles = plateGameObject.transform.localEulerAngles;
         
         // damit folgen die Label immer dem Ziel, also dem Teller
         Vector3 targetPosition = targetTransform.position + _followOffset;
@@ -87,8 +93,15 @@ public class WorldPositionButton : MonoBehaviour {
      }
  
 
-       public void ButtonClick() {
-        Debug.Log("Click");
-        sphinxButton.gameObject.SetActive(false);
-    }
+    //    public void OnButtonClicked(int i) {
+    //        isActive = !isActive;
+    //         ringButtonList[i].gameObject.SetActive(true);
+    //         labelButtonList[i].gameObject.SetActive(isActive);
+    //     Debug.Log("Click" + isActive);
+    //     //       foreach (Button btn in ringButtonList) {
+    //     //     btn.gameObject.SetActive(false);
+    //     //  }
+    // }
+
+
 }
