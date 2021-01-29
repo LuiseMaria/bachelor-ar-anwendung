@@ -2,37 +2,93 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using Vuforia;
 
-public class WorldPositionButton : MonoBehaviour
-{
+public class WorldPositionButton : MonoBehaviour {
+
+    Camera cameraToLookAt;
+    Vector3 _followOffset;
 
     [SerializeField]
     private Transform targetTransform;
 
+    [SerializeField]
+    private GameObject plateGameObject;
 
-    public RectTransform rectTransform;
+    [SerializeField]
+    private RectTransform rectTransform;
 
-    private Button labelButton;
+    private Vector2 pivotRightBottomCorner = new Vector2(0.97f, 0.08f);
+    private Vector2 pivoLeftBottomCorner = new Vector2(0.03f, 0.07f);
+
+    private Button griffinButton;
+
+    public Button sphinxButton;
+
 
 
     void Awake() {  
         rectTransform = GetComponent<RectTransform>();
-        labelButton = GetComponent<Button>();
     }
 
     void Start(){
-        
+        cameraToLookAt = Camera.main;
+        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+         lineRenderer.startColor = Color.gray;
+         lineRenderer.endColor = Color.black;
+        _followOffset = transform.position - targetTransform.position;
+        griffinButton = GameObject.Find("GriffinButton").GetComponent<Button>();
+        sphinxButton = GameObject.Find("SphinxButton").GetComponent<Button>();
+        griffinButton.onClick.AddListener(ButtonClick);
+    }
+  
+     
+    private void Update() {  
+        if(rectTransform.transform.tag == "RightLabelButtons") {
+            rectTransform.pivot = pivoLeftBottomCorner;
+        } else if(rectTransform.transform.tag == "LeftLabelButtons"){
+            rectTransform.pivot = pivotRightBottomCorner;
+        }
+        // if((rectTransform.transform.tag == "RightLabelButtons" && cameraToLookAt.transform.rotation.y > 0.0) 
+        // || (rectTransform.transform.tag == "LeftLabelButtons" && cameraToLookAt.transform.rotation.y < 0.0)){
+        //     rectTransform.pivot = pivoLeftBottomCorner;
+        // } 
+        // if ((rectTransform.transform.tag == "LeftLabelButtons" && cameraToLookAt.transform.rotation.y > 0.0) 
+        // || (rectTransform.transform.tag == "RightLabelButtons" && cameraToLookAt.transform.rotation.y < 0.0)){
+        //     rectTransform.pivot = pivotRightBottomCorner;
+        // }
+   //     Debug.Log("y wert: " + cameraToLookAt.transform.rotation.y);
+        implementLineRenderer();
     }
 
-    private void Update() {  
-        var targetPosition = targetTransform.position;
-        Vector3 labelPosition = rectTransform.position;
-        rectTransform.position = targetPosition + new Vector3(-0.1f, 0.2f, 0.1f);
+    void implementLineRenderer(){
+        LineRenderer lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.startWidth = 0.0025f;
+        lineRenderer.endWidth = 0.002f;
+        lineRenderer.SetPosition(0, rectTransform.transform.position);
+        lineRenderer.SetPosition(1, targetTransform.transform.position);
+      //   lineRenderer.transform.rotation =  plateGameObject.transform.rotation;
+     
+    }
 
-      //  float dist = Vector3.Distance(targetPosition, labelPosition);
-      //  rectTransform.position = new Vector3(labelPosition.x + dist, labelPosition.y + dist, labelPosition.z + dist);
-        //var show = distanceFromCenter < 0.3f;
+     void LateUpdate() {
+     // damit Label immer richtung User zeigen
+        rectTransform.transform.LookAt(cameraToLookAt.transform);
+        //  rectTransform.transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
+       transform.rotation = plateGameObject.transform.rotation;
+       transform.localEulerAngles = plateGameObject.transform.localEulerAngles;
+        
+        // damit folgen die Label immer dem Ziel, also dem Teller
+        Vector3 targetPosition = targetTransform.position + _followOffset;
+        transform.position += (targetPosition - transform.position);      
 
-    //    labelButton.enabled = show;
+     }
+ 
+
+       public void ButtonClick() {
+        Debug.Log("Click");
+        sphinxButton.gameObject.SetActive(false);
     }
 }

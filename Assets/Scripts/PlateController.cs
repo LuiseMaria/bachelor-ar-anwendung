@@ -16,6 +16,9 @@ public class PlateController : MonoBehaviour
     [SerializeField]
     private Button firstRing;
 
+    [SerializeField]
+    private Transform imageTarget;
+
     public bool isRotating = false;
     public float rotationSpeed = 20;
     
@@ -24,7 +27,8 @@ public class PlateController : MonoBehaviour
         RotateButton.onClick.AddListener(StartRotationAnimation);
         rotateSlider = GameObject.Find("RotateSlider").GetComponent<Slider>();
         initScaleSclider();
-       // firstRing = GameObject.Find("FirstRing").GetComponent<Button>();
+        firstRing = GameObject.Find("FirstRing").GetComponent<Button>();
+        firstRing.gameObject.SetActive(false);
      //   rectTransform = firstRing.GetComponent<RectTransform>();
       //  firstRing.onClick.AddListener(ShowDebugText);
     }
@@ -39,12 +43,14 @@ public class PlateController : MonoBehaviour
     void Update() {
         var newScale = new Vector3(scaleSlider.value, scaleSlider.value, scaleSlider.value);
         transform.localScale = newScale;
+         transform.localScale = transform.localScale;
         //rectTransform.transform.localScale = transform.localScale;
        if(isRotating){
             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         } else {
             transform.localEulerAngles = new Vector3(0.0f, rotateSlider.value, 0.0f);
         }
+        transform.position = imageTarget.position;
     }
 
     
