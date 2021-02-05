@@ -467,7 +467,21 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "PlateController",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "RingComponent",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -593,6 +607,20 @@
         {
             "managedAssemblyName": "UnityEngine.UI.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.Mask",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.ScrollRect",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.UI.Slider",
             "moduleName": "",
             "usedInScenes": []
@@ -601,6 +629,13 @@
             "managedAssemblyName": "UnityEngine.UI.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.UI.Text",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.Toggle",
             "moduleName": "",
             "usedInScenes": []
         },

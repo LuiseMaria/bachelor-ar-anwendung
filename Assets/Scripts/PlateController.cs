@@ -11,15 +11,16 @@ public class PlateController : MonoBehaviour
     public Slider scaleSlider;
     public Slider rotateSlider;
     
-    Button[] ringButtonList;
+//    Button[] ringButtonList;
 
-    public GameObject ringList;
+    public Button highlightedRing;
+
+  //  public GameObject ringList;
+
+     private Vector3 _followOffset;
 
 
   //  private RectTransform rectTransform;
-
-   //[SerializeField]
-    private Button firstRing, secondRing, thirdRing, fourthRing, lastRing;
 
     [SerializeField]
     private Transform imageTarget;
@@ -27,13 +28,18 @@ public class PlateController : MonoBehaviour
     public bool isRotating = false;
     public float rotationSpeed = 20;
     
+    public bool targetFound;
+
     void Start() {   
-        ringButtonList = ringList.GetComponentsInChildren<Button> ();
+      //  ringButtonList = ringList.GetComponentsInChildren<Button> ();
         ResetButton.onClick.AddListener(ResetPlate);
         RotateButton.onClick.AddListener(StartRotationAnimation);
         rotateSlider = GameObject.Find("RotateSlider").GetComponent<Slider>();
-        initScaleSclider();
-        
+        initScaleSclider();   
+        //  foreach (Button btn in ringButtonList) {
+        //     _followOffset = btn.transform.position - transform.position;
+        // }
+        _followOffset = highlightedRing.transform.position - transform.position;
     }
 
     private void initScaleSclider() {
@@ -46,20 +52,25 @@ public class PlateController : MonoBehaviour
     void Update() {
         var newScale = new Vector3(scaleSlider.value, scaleSlider.value, scaleSlider.value);
         transform.localScale = newScale;
-         transform.localScale = transform.localScale;
-        //rectTransform.transform.localScale = transform.localScale;
        if(isRotating){
             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         } else {
             transform.localEulerAngles = new Vector3(0.0f, rotateSlider.value, 0.0f);
         }
         transform.position = imageTarget.position;
-          foreach (Button btn in ringButtonList) {
-            btn.transform.position = transform.position;
-         }
     }
 
-    
+    void LateUpdate() {
+        Vector3 targetPosition;
+        // damit folgen die Ringe immer dem Ziel, also dem Teller
+        // foreach (Button btn in ringButtonList) {
+        //     targetPosition = transform.position + _followOffset;
+        //     btn.transform.position += (targetPosition - btn.transform.position);    
+        // }
+         targetPosition = transform.position + _followOffset;
+         highlightedRing.transform.position += (targetPosition - highlightedRing.transform.position);    
+    }
+
     public void StartRotationAnimation() {
         isRotating = !isRotating;
         rotateSlider.interactable = !isRotating;
@@ -72,8 +83,8 @@ public class PlateController : MonoBehaviour
         rotateSlider.interactable = true;
     }
 
-     public void ShowDebugText() {
-        Debug.Log("Click");
+    public void onTargetFound(bool isFound) {
+        targetFound = isFound;
     }
 
 }

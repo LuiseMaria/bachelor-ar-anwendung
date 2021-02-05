@@ -44,7 +44,9 @@
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="ButtonComponent" preserve="nothing"/>
+		<type fullname="DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap" preserve="nothing"/>
 		<type fullname="PlateController" preserve="nothing"/>
+		<type fullname="RingComponent" preserve="nothing"/>
 		<type fullname="WorldPositionButton" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.TextMeshPro">
@@ -68,8 +70,11 @@
 		<type fullname="UnityEngine.UI.CanvasScaler" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.GraphicRaycaster" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Image" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.Mask" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.ScrollRect" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Slider" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Text" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.Toggle" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Vuforia.UnityExtensions">
 		<type fullname="Vuforia.ImageTargetBehaviour" preserve="nothing"/>

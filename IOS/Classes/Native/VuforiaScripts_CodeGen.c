@@ -157,11 +157,11 @@ static const int32_t s_InvokerIndices[40] =
 	31,
 	14,
 	23,
-	1785,
+	1790,
 	23,
 	23,
 	23,
-	2013,
+	2018,
 	23,
 	30,
 	23,
@@ -183,8 +183,8 @@ static const int32_t s_InvokerIndices[40] =
 	26,
 	26,
 	23,
-	1252,
-	1252,
+	1258,
+	1258,
 };
 extern const Il2CppCodeGenModule g_VuforiaScriptsCodeGenModule;
 const Il2CppCodeGenModule g_VuforiaScriptsCodeGenModule = 
