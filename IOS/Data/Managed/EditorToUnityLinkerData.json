@@ -467,6 +467,13 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "DanielLochner.Assets.SimpleScrollSnap.DynamicPanelController",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap",
             "moduleName": "",
             "usedInScenes": []

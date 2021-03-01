@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,14 +36,6 @@ public class WorldPositionButton : MonoBehaviour {
         } else if(rectTransform.transform.tag == "LeftLabelButtons"){
             rectTransform.pivot = pivotRightBottomCorner;
         }
-        // if((rectTransform.transform.tag == "RightLabelButtons" && cameraToLookAt.transform.rotation.y > 0.0) 
-        // || (rectTransform.transform.tag == "LeftLabelButtons" && cameraToLookAt.transform.rotation.y < 0.0)){
-        //     rectTransform.pivot = pivoLeftBottomCorner;
-        // } 
-        // if ((rectTransform.transform.tag == "LeftLabelButtons" && cameraToLookAt.transform.rotation.y > 0.0) 
-        // || (rectTransform.transform.tag == "RightLabelButtons" && cameraToLookAt.transform.rotation.y < 0.0)){
-        //     rectTransform.pivot = pivotRightBottomCorner;
-        // }
         implementLineRenderer();
     }
 
