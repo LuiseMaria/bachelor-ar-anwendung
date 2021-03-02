@@ -11,35 +11,42 @@ public class PlateController : MonoBehaviour
     public Slider scaleSlider;
     public Slider rotateSlider;
     
-//    Button[] ringButtonList;
-
-    public Button highlightedRing;
-
-  //  public GameObject ringList;
-
-     private Vector3 _followOffset;
-
-
-  //  private RectTransform rectTransform;
-
+    public GameObject highlightedRingParent;
+    
     [SerializeField]
     private Transform imageTarget;
 
-    public bool isRotating = false;
-    public float rotationSpeed = 20;
-    
-    public bool targetFound;
+    [SerializeField]
+    private Button showLabelButtons;
 
+    [SerializeField]
+    private Canvas labelCanvas;
+
+    private Vector3 _followOffset;
+
+    private bool isRotating = false;
+    private float rotationSpeed = 20;
+    
+    private bool targetFound;
+
+    
     void Start() {   
-      //  ringButtonList = ringList.GetComponentsInChildren<Button> ();
         ResetButton.onClick.AddListener(ResetPlate);
         RotateButton.onClick.AddListener(StartRotationAnimation);
+        showLabelButtons.onClick.AddListener(toggleLabelButton);
         rotateSlider = GameObject.Find("RotateSlider").GetComponent<Slider>();
         initScaleSclider();   
-        //  foreach (Button btn in ringButtonList) {
-        //     _followOffset = btn.transform.position - transform.position;
-        // }
-        _followOffset = highlightedRing.transform.position - transform.position;
+  
+        _followOffset = highlightedRingParent.transform.position - transform.position;
+    }
+    
+    private void toggleLabelButton(){
+        labelCanvas.gameObject.SetActive(!labelCanvas.gameObject.activeSelf);
+        if(labelCanvas.gameObject.activeSelf){
+            showLabelButtons.image.sprite = Resources.Load<Sprite>("Icons/Hide");
+        } else {
+            showLabelButtons.image.sprite = Resources.Load<Sprite>("Icons/View");
+        }      
     }
 
     private void initScaleSclider() {
@@ -62,13 +69,8 @@ public class PlateController : MonoBehaviour
 
     void LateUpdate() {
         Vector3 targetPosition;
-        // damit folgen die Ringe immer dem Ziel, also dem Teller
-        // foreach (Button btn in ringButtonList) {
-        //     targetPosition = transform.position + _followOffset;
-        //     btn.transform.position += (targetPosition - btn.transform.position);    
-        // }
          targetPosition = transform.position + _followOffset;
-         highlightedRing.transform.position += (targetPosition - highlightedRing.transform.position);    
+         highlightedRingParent.transform.position += (targetPosition - highlightedRingParent.transform.position);    
     }
 
     public void StartRotationAnimation() {

@@ -11,6 +11,8 @@ public class ButtonComponent : MonoBehaviour {
     [SerializeField]
     private Button highlightedRing;
 
+    private Button highlightedRingInside;
+
     private bool isActive = true;
 
     private int indexOfLabelButton = 0;
@@ -35,20 +37,15 @@ public class ButtonComponent : MonoBehaviour {
     // private bool keepGoing = false;
 
     void Start() {
+        highlightedRingInside = Instantiate(highlightedRing, highlightedRing.transform.parent);
         childCount = gameObject.transform.childCount;
         for(int i = 0; i < childCount; i++){
-                buttonParent = gameObject.transform.GetChild(i);
-                labelButton = buttonParent.GetChild(indexOfLabelButton).GetComponent<Button>();
-                backButton = buttonParent.GetChild(indexOfBackButton).GetComponent<Button>();
-                AddButtonListener(labelButton, i);
-                backButton.onClick.AddListener( () => {
-                    DisableButtons(true, buttonParent);
-                    highlightedRing.gameObject.SetActive(!highlightedRing.gameObject.activeSelf); 
-                    if(highlightedRing.transform.parent.childCount > 2){
-                        DestroyImmediate(highlightedRing.transform.parent.GetChild(2).gameObject);
-                    }
-                });
-                backButton.gameObject.SetActive(false);
+            buttonParent = gameObject.transform.GetChild(i);
+            labelButton = buttonParent.GetChild(indexOfLabelButton).GetComponent<Button>();
+            backButton = buttonParent.GetChild(indexOfBackButton).GetComponent<Button>();
+            AddButtonListener(labelButton, i);
+            AddButtonListenerReturnButton(buttonParent);
+            backButton.gameObject.SetActive(false);
         }
         
     }
@@ -56,30 +53,32 @@ public class ButtonComponent : MonoBehaviour {
     private void AddButtonListener(Button button, int index) {
         button.onClick.AddListener( () => {
             buttonParent =  gameObject.transform.GetChild(index);
-            DisableButtons(false, buttonParent);
-            ToggleButton(buttonParent, index);
-            handleRingSelection(buttonParent.name);
+            if(isActive) {
+                DisableButtons(false, buttonParent);
+                ToggleButton(buttonParent, index);
+                handleRingSelection(index);
+            }
         });
- }
+    }
+    
+    private void AddButtonListenerReturnButton(Transform buttonParent) {
+        backButton.onClick.AddListener( () => {
+            DisableButtons(true, buttonParent);
+            highlightedRing.gameObject.SetActive(false);
+            highlightedRingInside.gameObject.SetActive(false);
+        });
+    }
 
     // ALLE Buttons deaktiviert/aktiviert
     private void DisableButtons(bool enable, Transform buttonParent) {
-        buttonParent.GetChild(indexOfBackButton).gameObject.SetActive(!enable);
-        buttonParent.GetChild(indexOfModalButton).gameObject.SetActive(!enable);
-        for(int buttonIndex = 0; buttonIndex < childCount; ++buttonIndex ){
-            Debug.Log("buttonIndex: " + buttonIndex + " buttonGO.gameObject.activeSelf: " + buttonParent.gameObject.activeSelf + " enable: " + enable);
-            gameObject.transform.GetChild(buttonIndex).gameObject.SetActive(enable);
-        }
+            buttonParent.GetChild(indexOfBackButton).gameObject.SetActive(!enable);
+            buttonParent.GetChild(indexOfModalButton).gameObject.SetActive(!enable);
+            for(int buttonIndex = 0; buttonIndex < childCount; ++buttonIndex ){
+                Debug.Log("buttonIndex: " + buttonIndex + " buttonGO.gameObject.activeSelf: " + buttonParent.gameObject.activeSelf + " enable: " + enable);
+                gameObject.transform.GetChild(buttonIndex).gameObject.SetActive(enable);
+            }
         isActive = !isActive;
     }
-   
-//    // ALLE Buttons deaktiviert/aktiviert
-//     private void DisableButtons() {
-//         for(int buttonIndex = 0; buttonIndex < childCount; ++buttonIndex ){
-//             gameObject.transform.GetChild(buttonIndex).gameObject.SetActive(!isActive);
-//         }
-//         isActive = !isActive;
-//     }
 
     //nur angeklickter Button
     private void ToggleButton(Transform buttonGO, int index) {
@@ -90,59 +89,22 @@ public class ButtonComponent : MonoBehaviour {
         }
     }
 
-
-    void handleRingSelection(string selectedButtonName){
-        Button copy;
+    private void handleRingSelection(int indexOfRing){
+        highlightedRingInside.gameObject.SetActive(!highlightedRing.gameObject.activeSelf);
         highlightedRing.gameObject.SetActive(!highlightedRing.gameObject.activeSelf); 
-        if(selectedButtonName == "SphinxGriffin"){
-            highlightedRing.transform.localScale = new Vector3(2f, 2f, 2f);
-        } else if(selectedButtonName == "PlanetenKrieger"){
-            highlightedRing.transform.localScale = new Vector3(4f, 4f, 4f);
-        } else if(selectedButtonName == "Ornamente"){
-            highlightedRing.transform.localScale = new Vector3(5.3f, 5.3f, 5.3f);
-        } else if(selectedButtonName == "HofSzenen"){
-            highlightedRing.transform.localScale = new Vector3(7.5f, 7.5f, 7.5f);
-            copy = Instantiate(highlightedRing, highlightedRing.transform.parent);
-            copy.transform.localScale = new Vector3(5.5f, 5.5f, 5.5f);
+        if(indexOfRing == 1){ //Planeten&Krieger
+            highlightedRing.transform.localScale = new Vector3(4.3f, 4.3f, 4.3f);
+            highlightedRingInside.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        } else if(indexOfRing == 2){ //Ornamente
+            highlightedRing.transform.localScale = new Vector3(5.4f, 5.4f, 5.4f);
+            highlightedRingInside.transform.localScale = new Vector3(4.1f, 4.1f, 4.1f);
+        } else if(indexOfRing == 3){ //HöfischeSzenen
+            highlightedRing.transform.localScale = new Vector3(7f, 7f, 7f);
+            highlightedRingInside.transform.localScale = new Vector3(5.5f, 5.5f, 5.5f);
         } else {
-             highlightedRing.transform.localScale = new Vector3(2f, 2f, 2f);
+            highlightedRingInside.gameObject.SetActive(false);
+            highlightedRing.transform.localScale = new Vector3(2f, 2f, 2f);
         }
     }
-
-
-    // IEnumerator Pulse(Button button) {
-    //      // Run this indefinitely
-    //      while (keepGoing) {
-    //             Debug.Log(keepGoing + " keepGoing");
-    //         // for(int i = 0; i < gameObject.transform.childCount; i++){
-    //             // buttonParent = gameObject.transform.GetChild(i);
-
-    //          // Get bigger for a few seconds
-    //          while (this.currentRatio != this.growthBound) {
-    //              // Determine the new ratio to use
-    //              currentRatio = Mathf.MoveTowards(currentRatio, growthBound, approachSpeed);
- 
-    //              // Update our text element
-    //              if(button.gameObject.activeSelf){
-    //                 button.transform.localScale = Vector3.one * currentRatio;
-    //              }
-
-    //              yield return new WaitForEndOfFrame();
-    //          }
- 
-    //          // Shrink for a few seconds
-    //          while (this.currentRatio != this.shrinkBound) {
-    //              // Determine the new ratio to use
-    //              currentRatio = Mathf.MoveTowards(currentRatio, shrinkBound, approachSpeed);
- 
-    //              // Update our text element
-    //             if(button.gameObject.activeSelf){
-    //                button.transform.localScale = Vector3.one * currentRatio;
-    //             }
-    //              yield return new WaitForEndOfFrame();
-    //          }
-    //     //  }
-    //      }
-    //  }
 
 }

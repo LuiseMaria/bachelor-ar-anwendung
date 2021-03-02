@@ -89,21 +89,23 @@ public class DynamicPanelController : MonoBehaviour {
     }
 
     private void setModalImageAndText(string selectedRing){
-        string[] files = getFiles(selectedRing);
-        if(files.Length > 0){
-            handleNumberOfSlides(files.Length);
+        List<String> files = getFiles(selectedRing);
+        if(files.Count > 0){
+            handleNumberOfSlides(files.Count);
             setImage(srollSnapComponent.NumberOfPanels, files);
             readTxtFile(srollSnapComponent.NumberOfPanels, "SlideContent/" + $"{selectedRing}");
         }
     }
 
 
-    private string[] getFiles(string selectedRing){
+    private List<String> getFiles(string selectedRing){
         selectedRing = selectedRing.Replace(" ", "");
         string folderPath = Application.streamingAssetsPath + "/SlideContent/" + $"{selectedRing}";
         string finalPath = folderPath + "/Images/";
-        string[] files = Directory.GetFiles(finalPath, "*.JPG");
-        Array.Sort(files);
+        List<String> files = new List<String>(Directory.GetFiles(finalPath, "*.JPG"));
+        files.AddRange(Directory.GetFiles(finalPath, "*.jpg"));
+        files.AddRange(Directory.GetFiles(finalPath, "*.png"));
+        files.Sort();
         return files;
     }
 
@@ -125,11 +127,11 @@ public class DynamicPanelController : MonoBehaviour {
         }
     }
 
-  private void setImage(int slideLength, string[] filePaths){
+  private void setImage(int slideLength, List<String> filePaths){
         for(int i = 0; i < slideLength; i++) {
-            Debug.Log("slideLength "+ slideLength + " i " + i + " " + filePaths.Length);
+            Debug.Log("slideLength "+ slideLength + " i " + i + " " + filePaths.Count);
             Image image = SlideList.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<Image>();
-            if(i < filePaths.Length){
+            if(i < filePaths.Count){
                 image.sprite = GetSpritefromImage(filePaths[i]);
                 setSizeOfImages(image);
             }
@@ -145,7 +147,7 @@ public class DynamicPanelController : MonoBehaviour {
         } else if (srollSnapComponent.NumberOfPanels > fileLength){
             int difference = srollSnapComponent.NumberOfPanels - fileLength;
             Debug.Log(srollSnapComponent.NumberOfPanels + " Number Panels vor Remove " + fileLength);
-            for(int i = 0; i < difference; i++){
+            for(int i = 0; i < difference; i++) {
                 RemoveSlide(i);
             }
         }
@@ -160,8 +162,10 @@ public class DynamicPanelController : MonoBehaviour {
    private void setSizeOfImages(Image image) {
         Vector2 extraSize = new Vector2(30f, 30f);
         Debug.Log("slideLength "+image.sprite.rect.size.x);
-        if(image.sprite.rect.size.x > 800) {
+        if(image.sprite.rect.size.x > 800 && image.sprite.rect.size.x < 900) {
             image.rectTransform.sizeDelta = image.sprite.rect.size * 0.5f;
+        } else if(image.sprite.rect.size.x > 900) {
+            image.rectTransform.sizeDelta = image.sprite.rect.size * 0.4f;
         } else {
             image.rectTransform.sizeDelta = image.sprite.rect.size;
         }
@@ -182,11 +186,11 @@ public class DynamicPanelController : MonoBehaviour {
      private Sprite GetSpritefromImage(string imgPath) {
  
         //Converts desired path into byte array
-        byte[] pngBytes = System.IO.File.ReadAllBytes(imgPath);
+        byte[] bytes = System.IO.File.ReadAllBytes(imgPath);
  
         //Creates texture and loads byte array data to create image
         Texture2D tex = new Texture2D(2, 2);
-        tex.LoadImage(pngBytes);
+        tex.LoadImage(bytes);
  
         //Creates a new Sprite based on the Texture2D
         Sprite fromTex = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);

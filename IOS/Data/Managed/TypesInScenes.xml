@@ -47,7 +47,6 @@
 		<type fullname="DanielLochner.Assets.SimpleScrollSnap.DynamicPanelController" preserve="nothing"/>
 		<type fullname="DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap" preserve="nothing"/>
 		<type fullname="PlateController" preserve="nothing"/>
-		<type fullname="RingComponent" preserve="nothing"/>
 		<type fullname="WorldPositionButton" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.TextMeshPro">
