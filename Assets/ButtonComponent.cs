@@ -9,13 +9,13 @@ public class ButtonComponent : MonoBehaviour {
     private Transform buttonParent;
 
     [SerializeField]
-    private Button highlightedRing;
+    private Button highlightedRing = default;
 
     private Button highlightedRingInside;
 
     private bool isActive = true;
 
-    private int indexOfLabelButton = 0;
+    private int indexOfReturnButton = 0;
 
     private int indexOfBackButton = 1;
 
@@ -24,8 +24,6 @@ public class ButtonComponent : MonoBehaviour {
     private Button labelButton;
     
     private Button backButton;
-
-    private Button openModal;
 
     private Transform Locator;
 
@@ -37,25 +35,16 @@ public class ButtonComponent : MonoBehaviour {
     public bool fourthRing = false;
     public bool fifthRing = false;
 
-
-    // public float approachSpeed = 0.02f;
-    // public float growthBound = 1f;
-    // public float shrinkBound = 0.5f;
-    // private float currentRatio = 1f;
-
-    // private Coroutine routine;
-    // private bool keepGoing = false;
-
     void Start() {
         highlightedRingInside = Instantiate(highlightedRing, highlightedRing.transform.parent);
         childCount = gameObject.transform.childCount;
-        Locator = GameObject.Find("Locator").GetComponent<Transform>();
+        Locator = GameObject.Find("LocatorPin").GetComponent<Transform>();
         for(int i = 0; i < childCount; i++) {
             buttonParent = gameObject.transform.GetChild(i);
-            labelButton = buttonParent.GetChild(indexOfLabelButton).GetComponent<Button>();
+            labelButton = buttonParent.GetChild(indexOfReturnButton).GetComponent<Button>();
             backButton = buttonParent.GetChild(indexOfBackButton).GetComponent<Button>();
             AddButtonListenerLabel(labelButton, i);
-            AddButtonListener(buttonParent);
+            AddButtonListenerReturnButton(buttonParent);
             backButton.gameObject.SetActive(false);
         }
         
@@ -72,22 +61,19 @@ public class ButtonComponent : MonoBehaviour {
         });
     }
     
-    private void AddButtonListener(Transform buttonParent) {
+    private void AddButtonListenerReturnButton(Transform buttonParent) {
         backButton.onClick.AddListener( () => {
             DisableButtons(true, buttonParent);
             highlightedRing.transform.parent.gameObject.SetActive(false);
             Locator.gameObject.SetActive(false);
-            // highlightedRing.gameObject.SetActive(false);
-            // highlightedRingInside.gameObject.SetActive(false);
         });
     }
 
-    // ALLE Buttons deaktiviert/aktiviert
+    // ALLE Label Buttons deaktiviert/aktiviert
     private void DisableButtons(bool enable, Transform buttonParent) {
             buttonParent.GetChild(indexOfBackButton).gameObject.SetActive(!enable);
             buttonParent.GetChild(indexOfModalButton).gameObject.SetActive(!enable);
             for(int buttonIndex = 0; buttonIndex < childCount; ++buttonIndex ){
-                Debug.Log("buttonIndex: " + buttonIndex + " buttonGO.gameObject.activeSelf: " + buttonParent.gameObject.activeSelf + " enable: " + enable);
                 gameObject.transform.GetChild(buttonIndex).gameObject.SetActive(enable);
             }
         isActive = !isActive;
@@ -96,9 +82,7 @@ public class ButtonComponent : MonoBehaviour {
     //nur angeklickter Button
     private void ToggleButton(Transform buttonGO, int index) {
         if(!isActive) {
-          //  buttonGO.GetChild(indexOfBackButton).gameObject.SetActive(true);
             buttonGO.gameObject.SetActive(!buttonGO.gameObject.activeSelf);
-            Debug.Log("Toggle Button " + buttonGO.name + " " + buttonGO.gameObject.activeSelf);
         }
     }
 
@@ -121,7 +105,7 @@ public class ButtonComponent : MonoBehaviour {
             fourthRing = true;
             highlightedRing.image.rectTransform.sizeDelta = new Vector2(1.1f, 1.1f);
             highlightedRingInside.image.rectTransform.sizeDelta = new Vector2(0.78f, 0.78f);
-        } else if(indexOfRing == 0){
+        } else if(indexOfRing == 0){ // Sphinghen & Greife
             firstRing = true;
             highlightedRingInside.gameObject.SetActive(false);
             highlightedRing.image.rectTransform.sizeDelta = new Vector2 (0.3f, 0.3f);

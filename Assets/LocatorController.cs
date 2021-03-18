@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace DanielLochner.Assets.SimpleScrollSnap {
 public class LocatorController : MonoBehaviour {
 
     private Transform targetTransform;
@@ -15,22 +14,14 @@ public class LocatorController : MonoBehaviour {
 
     private Button searchIconButton;
 
-    private SimpleScrollSnap srollSnapComponent;
-
     [SerializeField]
-    private GameObject SlideList;
+    private GameObject SlideList = default;
 
     private Vector3 camPos; 
     private Transform camTr;
-    
-///    public UnityEvent myEvent;
 
     [SerializeField]
-    private Canvas modalCanvas;
-
-    void Awake() {  
-        srollSnapComponent = GetComponent<SimpleScrollSnap>();
-    }
+    private Canvas modalCanvas = default;
 
 
     // Start is called before the first frame update
@@ -64,7 +55,7 @@ public class LocatorController : MonoBehaviour {
 
 
     private void getTargetPosition(){
-          int slideLength = SlideList.transform.childCount;
+        int slideLength = SlideList.transform.childCount;
         for(int i = 0; i < slideLength; i++) {
             Button button = SlideList.transform.GetChild(i).GetChild(4).GetComponent<Button>();
             button.name = "LocateImage" + i;
@@ -91,5 +82,5 @@ public class LocatorController : MonoBehaviour {
             targetTransform = GameObject.Find("Sphinx").GetComponent<Transform>();
         }
     }
-}
+
 }

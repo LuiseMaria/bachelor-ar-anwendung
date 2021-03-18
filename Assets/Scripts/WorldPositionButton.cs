@@ -11,10 +11,10 @@ public class WorldPositionButton : MonoBehaviour {
     private Vector3 _followOffset;
 
     [SerializeField]
-    private Transform targetTransform;
+    private Transform targetTransform = default;
 
     [SerializeField]
-    private RectTransform rectTransform;
+    private RectTransform rectTransform = default;
 
     private Vector2 pivotRightBottomCorner = new Vector2(0.97f, 0.08f);
     private Vector2 pivoLeftBottomCorner = new Vector2(0.03f, 0.07f);

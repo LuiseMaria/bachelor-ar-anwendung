@@ -10,33 +10,24 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
 public class DynamicPanelController : MonoBehaviour {
     
     [SerializeField]
-    private Canvas modalCanvas;
+    private Canvas modalCanvas = default;
 
     private SimpleScrollSnap srollSnapComponent;
     
     [SerializeField]
-    private GameObject gameObjectWithButtonList;
+    private GameObject gameObjectWithButtonList = default;
 
     [SerializeField]
-    private Button highlightedRing;
+    private Button highlightedRing = default;
 
     [SerializeField]
-    private GameObject contentPanel;
+    private GameObject contentPanel = default;
 
     [SerializeField]
-    private GameObject SlideList;
+    private GameObject SlideList = default;
 
     [SerializeField]
-    private Image image;
-   
-    [SerializeField]
-    private TextMeshProUGUI modalTitle;
-
-   [SerializeField]
-    private TextMeshProUGUI modalDesription;
-
-    [SerializeField]
-    private Transform toggle;
+    private Transform toggle = default;
 
     private Button moreButton;
 
