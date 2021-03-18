@@ -2,8 +2,11 @@
 	<assembly fullname="UnityEngine">
 		<type fullname="UnityEngine.Object" preserve="nothing"/>
 		<type fullname="UnityEditor.VFXManager" preserve="nothing"/>
+		<type fullname="UnityEngine.Behaviour" preserve="nothing"/>
 		<type fullname="UnityEditor.PlayerSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.MonoBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.Shader" preserve="nothing"/>
+		<type fullname="UnityEngine.Component" preserve="nothing"/>
 		<type fullname="UnityEngine.TextAsset" preserve="nothing"/>
 		<type fullname="UnityEditor.MonoScript" preserve="nothing"/>
 		<type fullname="UnityEditor.AudioManager" preserve="nothing"/>
@@ -26,11 +29,8 @@
 		<type fullname="UnityEngine.Texture2D" preserve="nothing"/>
 		<type fullname="UnityEngine.Renderer" preserve="nothing"/>
 		<type fullname="UnityEngine.ComputeShader" preserve="nothing"/>
-		<type fullname="UnityEngine.Behaviour" preserve="nothing"/>
-		<type fullname="UnityEngine.MonoBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.GameObject" preserve="nothing"/>
 		<type fullname="UnityEngine.Camera" preserve="nothing"/>
-		<type fullname="UnityEngine.Component" preserve="nothing"/>
 		<type fullname="UnityEngine.Transform" preserve="nothing"/>
 		<type fullname="UnityEngine.RenderSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.Collider" preserve="nothing"/>
@@ -40,14 +40,21 @@
 		<type fullname="UnityEngine.Light" preserve="nothing"/>
 		<type fullname="UnityEngine.Texture" preserve="nothing"/>
 		<type fullname="UnityEngine.Mesh" preserve="nothing"/>
+		<type fullname="UnityEngine.SpriteRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.MeshFilter" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="ButtonComponent" preserve="nothing"/>
 		<type fullname="DanielLochner.Assets.SimpleScrollSnap.DynamicPanelController" preserve="nothing"/>
+		<type fullname="DanielLochner.Assets.SimpleScrollSnap.LocatorController" preserve="nothing"/>
 		<type fullname="DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap" preserve="nothing"/>
 		<type fullname="PlateController" preserve="nothing"/>
 		<type fullname="WorldPositionButton" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="LeanTouch">
+		<type fullname="Lean.Touch.LeanPinchScale" preserve="nothing"/>
+		<type fullname="Lean.Touch.LeanTouch" preserve="nothing"/>
+		<type fullname="Lean.Touch.LeanTwistRotateAxis" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.TextMeshPro">
 		<type fullname="TMPro.TMP_ColorGradient" preserve="nothing"/>
@@ -64,6 +71,10 @@
 		<type fullname="UnityEngine.XR.ARFoundation.ARSession" preserve="nothing"/>
 		<type fullname="UnityEngine.XR.ARFoundation.ARSessionOrigin" preserve="nothing"/>
 	</assembly>
+	<assembly fullname="Unity.XR.Management">
+		<type fullname="UnityEngine.XR.Management.XRGeneralSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.XR.Management.XRManagerSettings" preserve="nothing"/>
+	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
 		<type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="nothing"/>
@@ -73,8 +84,6 @@
 		<type fullname="UnityEngine.UI.Image" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Mask" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.ScrollRect" preserve="nothing"/>
-		<type fullname="UnityEngine.UI.Slider" preserve="nothing"/>
-		<type fullname="UnityEngine.UI.Text" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Toggle" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Vuforia.UnityExtensions">

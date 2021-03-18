@@ -21,11 +21,21 @@ public class ButtonComponent : MonoBehaviour {
 
     private int indexOfModalButton = 2;
 
+    private Button labelButton;
+    
     private Button backButton;
 
-    private Button labelButton;
+    private Button openModal;
+
+    private Transform Locator;
 
     private int childCount;
+
+    public bool firstRing = false;
+    public bool secondRing = false;
+    public bool thirdRing = false;
+    public bool fourthRing = false;
+    public bool fifthRing = false;
 
 
     // public float approachSpeed = 0.02f;
@@ -39,18 +49,19 @@ public class ButtonComponent : MonoBehaviour {
     void Start() {
         highlightedRingInside = Instantiate(highlightedRing, highlightedRing.transform.parent);
         childCount = gameObject.transform.childCount;
-        for(int i = 0; i < childCount; i++){
+        Locator = GameObject.Find("Locator").GetComponent<Transform>();
+        for(int i = 0; i < childCount; i++) {
             buttonParent = gameObject.transform.GetChild(i);
             labelButton = buttonParent.GetChild(indexOfLabelButton).GetComponent<Button>();
             backButton = buttonParent.GetChild(indexOfBackButton).GetComponent<Button>();
-            AddButtonListener(labelButton, i);
-            AddButtonListenerReturnButton(buttonParent);
+            AddButtonListenerLabel(labelButton, i);
+            AddButtonListener(buttonParent);
             backButton.gameObject.SetActive(false);
         }
         
     }
 
-    private void AddButtonListener(Button button, int index) {
+    private void AddButtonListenerLabel(Button button, int index) {
         button.onClick.AddListener( () => {
             buttonParent =  gameObject.transform.GetChild(index);
             if(isActive) {
@@ -61,11 +72,13 @@ public class ButtonComponent : MonoBehaviour {
         });
     }
     
-    private void AddButtonListenerReturnButton(Transform buttonParent) {
+    private void AddButtonListener(Transform buttonParent) {
         backButton.onClick.AddListener( () => {
             DisableButtons(true, buttonParent);
-            highlightedRing.gameObject.SetActive(false);
-            highlightedRingInside.gameObject.SetActive(false);
+            highlightedRing.transform.parent.gameObject.SetActive(false);
+            Locator.gameObject.SetActive(false);
+            // highlightedRing.gameObject.SetActive(false);
+            // highlightedRingInside.gameObject.SetActive(false);
         });
     }
 
@@ -92,18 +105,26 @@ public class ButtonComponent : MonoBehaviour {
     private void handleRingSelection(int indexOfRing){
         highlightedRingInside.gameObject.SetActive(!highlightedRing.gameObject.activeSelf);
         highlightedRing.gameObject.SetActive(!highlightedRing.gameObject.activeSelf); 
+        firstRing = false;
+        secondRing = false;
+        thirdRing = false;
+        fourthRing = false;
         if(indexOfRing == 1){ //Planeten&Krieger
-            highlightedRing.transform.localScale = new Vector3(4.3f, 4.3f, 4.3f);
-            highlightedRingInside.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+            secondRing = true;
+            highlightedRing.image.rectTransform.sizeDelta = new Vector2(0.6f, 0.6f);
+            highlightedRingInside.image.rectTransform.sizeDelta = new Vector2(0.35f, 0.35f);
         } else if(indexOfRing == 2){ //Ornamente
-            highlightedRing.transform.localScale = new Vector3(5.4f, 5.4f, 5.4f);
-            highlightedRingInside.transform.localScale = new Vector3(4.1f, 4.1f, 4.1f);
+            thirdRing = true;
+            highlightedRing.image.rectTransform.sizeDelta = new Vector2(0.8f, 0.8f);
+            highlightedRingInside.image.rectTransform.sizeDelta = new Vector2(0.6f, 0.6f);
         } else if(indexOfRing == 3){ //HöfischeSzenen
-            highlightedRing.transform.localScale = new Vector3(7f, 7f, 7f);
-            highlightedRingInside.transform.localScale = new Vector3(5.5f, 5.5f, 5.5f);
-        } else {
+            fourthRing = true;
+            highlightedRing.image.rectTransform.sizeDelta = new Vector2(1.1f, 1.1f);
+            highlightedRingInside.image.rectTransform.sizeDelta = new Vector2(0.78f, 0.78f);
+        } else if(indexOfRing == 0){
+            firstRing = true;
             highlightedRingInside.gameObject.SetActive(false);
-            highlightedRing.transform.localScale = new Vector3(2f, 2f, 2f);
+            highlightedRing.image.rectTransform.sizeDelta = new Vector2 (0.3f, 0.3f);
         }
     }
 

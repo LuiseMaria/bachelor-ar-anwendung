@@ -43,10 +43,16 @@ public class DynamicPanelController : MonoBehaviour {
     private float toggleWidth;
 
     private int indexOfModalButton = 2;
+
+    private Vector3 camPos; 
+    private Transform camTr;
     
     void Start() {
         initModalButton();
-        AddButtonListener(highlightedRing);    
+        AddButtonListener();
+        camTr  = Camera.main.transform;
+        camPos = camTr.position;
+     
         highlightedRing.gameObject.SetActive(false);
         modalCanvas.gameObject.SetActive(false);
     }
@@ -60,11 +66,12 @@ public class DynamicPanelController : MonoBehaviour {
 
 
 
-    private void AddButtonListener(Button ringButton) {
-        ringButton.onClick.AddListener( () => {
+    private void AddButtonListener() {
+        highlightedRing.onClick.AddListener( () => {
            modalCanvas.gameObject.SetActive(true);
            setModalImageAndText(getSelectedButton());
        });
+       
     }
 
     private void initModalButton(){
@@ -109,7 +116,6 @@ public class DynamicPanelController : MonoBehaviour {
         return files;
     }
 
-
     private void readTxtFile(int slideLength, String assetPath){
         Debug.Log("assetPath " + assetPath);
         string textAsset = Resources.Load<TextAsset>(assetPath).text;
@@ -117,7 +123,7 @@ public class DynamicPanelController : MonoBehaviour {
         for(int i = 0; i < slideLength; i++){
             TextMeshProUGUI title = SlideList.transform.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI description = SlideList.transform.GetChild(i).GetChild(2).GetComponent<TextMeshProUGUI>();
-            Debug.Log("linesInFile.Length  " + i + linesInFile.Length);
+            Debug.Log("linesInFile.Length  " + i + " " + linesInFile.Length);
             title.text = linesInFile[0];
              if(i < (linesInFile.Length - 1)){
                 description.text = linesInFile[i+1];
@@ -184,7 +190,6 @@ public class DynamicPanelController : MonoBehaviour {
     }
 
      private Sprite GetSpritefromImage(string imgPath) {
- 
         //Converts desired path into byte array
         byte[] bytes = System.IO.File.ReadAllBytes(imgPath);
  
@@ -194,7 +199,6 @@ public class DynamicPanelController : MonoBehaviour {
  
         //Creates a new Sprite based on the Texture2D
         Sprite fromTex = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
- 
         return fromTex;
      }
     }

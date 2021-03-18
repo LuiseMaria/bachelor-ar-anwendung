@@ -20,7 +20,7 @@ public class WorldPositionButton : MonoBehaviour {
     private Vector2 pivoLeftBottomCorner = new Vector2(0.03f, 0.07f);
 
     void Awake() {  
-        rectTransform = GetComponent<RectTransform>();
+       rectTransform = GetComponent<RectTransform>();
     }
 
     void Start(){
@@ -55,13 +55,13 @@ public class WorldPositionButton : MonoBehaviour {
     }
 
     void LateUpdate() {
-     // damit Label immer richtung User zeigen
+        // damit Label immer richtung User zeigen
         rectTransform.transform.LookAt(cameraToLookAt.transform);
         rectTransform.transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
         
         // damit folgen die Label immer dem Ziel, also dem Teller
         Vector3 targetPosition = targetTransform.position + _followOffset;
-        transform.position += (targetPosition - transform.position);      
+        transform.position += (targetPosition - transform.position);
     }
 
 
