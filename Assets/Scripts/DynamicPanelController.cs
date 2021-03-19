@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.IO;
+using UnityEngine.EventSystems;
 
 namespace DanielLochner.Assets.SimpleScrollSnap {
 public class DynamicPanelController : MonoBehaviour {
@@ -13,12 +14,6 @@ public class DynamicPanelController : MonoBehaviour {
     private Canvas modalCanvas = default;
 
     private SimpleScrollSnap srollSnapComponent;
-    
-    [SerializeField]
-    private GameObject gameObjectWithButtonList = default;
-
-    [SerializeField]
-    private Button highlightedRing = default;
 
     [SerializeField]
     private GameObject contentPanel = default;
@@ -29,24 +24,7 @@ public class DynamicPanelController : MonoBehaviour {
     [SerializeField]
     private Transform toggle = default;
 
-    private Button moreButton;
-
     private float toggleWidth;
-
-    private int indexOfModalButton = 2;
-
-    private Vector3 camPos; 
-    private Transform camTr;
-    
-    void Start() {
-        initModalButton();
-        AddButtonListener();
-        camTr  = Camera.main.transform;
-        camPos = camTr.position;
-     
-        highlightedRing.gameObject.SetActive(false);
-        modalCanvas.gameObject.SetActive(false);
-    }
 
 
     private void Awake(){
@@ -55,35 +33,10 @@ public class DynamicPanelController : MonoBehaviour {
     }
 
 
-
-
-    private void AddButtonListener() {
-        highlightedRing.onClick.AddListener( () => {
-           modalCanvas.gameObject.SetActive(true);
-           setModalImageAndText(getSelectedButton());
-       });
-       
-    }
-
-    private void initModalButton(){
-        for(int i = 0; i < gameObjectWithButtonList.transform.childCount; i++){
-            moreButton = gameObjectWithButtonList.transform.GetChild(i).GetChild(indexOfModalButton).GetComponent<Button>();
-            moreButton.onClick.AddListener( () => {
-                modalCanvas.gameObject.SetActive(true);
-                setModalImageAndText(getSelectedButton());
-            });
-            moreButton.gameObject.SetActive(false);
-        }
-    }
-
-    private string getSelectedButton(){
-       String parentName = "";
-        for(int i = 0; i < gameObjectWithButtonList.transform.childCount; i++){
-                if(gameObjectWithButtonList.transform.GetChild(i).gameObject.activeSelf){
-                    return parentName = gameObjectWithButtonList.transform.GetChild(i).name;
-                }
-        }
-        return parentName; 
+    public void openModalButtonAddOnListener() {
+        modalCanvas.gameObject.SetActive(true);
+        setModalImageAndText(EventSystem.current.currentSelectedGameObject.transform.parent.name);
+        srollSnapComponent.GoToPanel(0);
     }
 
     private void setModalImageAndText(string selectedRing){
@@ -114,7 +67,6 @@ public class DynamicPanelController : MonoBehaviour {
         for(int i = 0; i < slideLength; i++){
             TextMeshProUGUI title = SlideList.transform.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI description = SlideList.transform.GetChild(i).GetChild(2).GetComponent<TextMeshProUGUI>();
-            Debug.Log("linesInFile.Length  " + i + " " + linesInFile.Length);
             title.text = linesInFile[0];
              if(i < (linesInFile.Length - 1)){
                 description.text = linesInFile[i+1];
@@ -126,7 +78,6 @@ public class DynamicPanelController : MonoBehaviour {
 
   private void setImage(int slideLength, List<String> filePaths){
         for(int i = 0; i < slideLength; i++) {
-            Debug.Log("slideLength "+ slideLength + " i " + i + " " + filePaths.Count);
             Image image = SlideList.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<Image>();
             if(i < filePaths.Count){
                 image.sprite = GetSpritefromImage(filePaths[i]);
@@ -143,7 +94,6 @@ public class DynamicPanelController : MonoBehaviour {
             }
         } else if (srollSnapComponent.NumberOfPanels > fileLength){
             int difference = srollSnapComponent.NumberOfPanels - fileLength;
-            Debug.Log(srollSnapComponent.NumberOfPanels + " Number Panels vor Remove " + fileLength);
             for(int i = 0; i < difference; i++) {
                 RemoveSlide(i);
             }
@@ -192,6 +142,7 @@ public class DynamicPanelController : MonoBehaviour {
         Sprite fromTex = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
         return fromTex;
      }
-    }
+
+}
 
 }

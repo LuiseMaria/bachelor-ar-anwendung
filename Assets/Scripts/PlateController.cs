@@ -27,17 +27,11 @@ public class PlateController : MonoBehaviour {
     private float rotationSpeed = 20;
 
     private Vector3 defaultScale;
-    
-    public bool targetFound;
 
-    public bool isDigitalTwin = true;
-    
-    void Start() { 
-        isDigitalTwin = true;
-        settingsDigitalTwin();  
+    void Start() {
         AddListenerControllButtons();
         defaultScale = transform.localScale;
-        _followOffset = highlightedRingParent.transform.position - transform.position;
+       _followOffset = highlightedRingParent.transform.position - transform.position;
     }
     
     private void AddListenerControllButtons() {
@@ -49,21 +43,14 @@ public class PlateController : MonoBehaviour {
         });
     }
 
-    private void settingsDigitalTwin(){
-        if(!isDigitalTwin){
-            ResetButton.gameObject.SetActive(false);
-            RotateButton.gameObject.SetActive(false);
-            pinchToZoomButton.gameObject.SetActive(false);
-        }
-    }
 
     private void ToggleLabelView(){
         labelCanvas.gameObject.SetActive(!labelCanvas.gameObject.activeSelf);
         if(labelCanvas.gameObject.activeSelf){
-            showHideButton.image.sprite = Resources.Load<Sprite>("Icons/View");
-        } else {
             showHideButton.image.sprite = Resources.Load<Sprite>("Icons/Hide");
-        }      
+        } else {
+            showHideButton.image.sprite = Resources.Load<Sprite>("Icons/View");
+        }
     }
 
     public void PinchToZoom() {
@@ -81,9 +68,9 @@ public class PlateController : MonoBehaviour {
        if(isRotating) {
             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         }
-        transform.position = imageTarget.position;
+        transform.position = imageTarget.position + new Vector3(0.3f, 0.1f, 0.3f);
         highlightedRingParent.transform.localScale = transform.localScale;
-
+   
         if(transform.localScale == defaultScale){
             ResetButton.interactable = false;
         } else {
@@ -94,7 +81,7 @@ public class PlateController : MonoBehaviour {
     void LateUpdate() {
         Vector3 targetPosition;
         targetPosition = transform.position + _followOffset;
-        highlightedRingParent.transform.position += (targetPosition - highlightedRingParent.transform.position);    
+        highlightedRingParent.transform.position += (targetPosition - highlightedRingParent.transform.position);
     }
 
     public void StartRotationAnimation() {
@@ -104,10 +91,6 @@ public class PlateController : MonoBehaviour {
     public void ResetPlate(){
         isRotating = false;
         transform.localScale = defaultScale;
-    }
-
-    public void onTargetFound(bool isFound) {
-        targetFound = isFound;
     }
 
 }

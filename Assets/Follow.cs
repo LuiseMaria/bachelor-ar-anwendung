@@ -22,11 +22,10 @@ public class Follow : MonoBehaviour {
         Vector3 targetPosition = leader.position + _followOffset;
         float dist = Vector3.Distance(initalTargetScale, leader.localScale);
         float diffInPercent = dist / 100;
-        
         // Smooth follow.    
-        transform.position += (targetPosition - transform.position);
+        //transform.position += (targetPosition - transform.position);
         Vector3 calculatedScale = initalScaleOfOrigin - (initalScaleOfOrigin * diffInPercent);
-        transform.localScale = leader.localScale;
+        transform.localScale = calculatedScale;
     
       //  transform.GetChild(0).gameObject.transform.localScale = leader.localScale;
     }

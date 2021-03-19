@@ -46,9 +46,10 @@
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="ButtonComponent" preserve="nothing"/>
 		<type fullname="DanielLochner.Assets.SimpleScrollSnap.DynamicPanelController" preserve="nothing"/>
-		<type fullname="DanielLochner.Assets.SimpleScrollSnap.LocatorController" preserve="nothing"/>
 		<type fullname="DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap" preserve="nothing"/>
+		<type fullname="LocatorController" preserve="nothing"/>
 		<type fullname="PlateController" preserve="nothing"/>
+		<type fullname="StartModalComponent" preserve="nothing"/>
 		<type fullname="WorldPositionButton" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="LeanTouch">
