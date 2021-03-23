@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Vuforia;
+using System;
 
 public class LocatorController : MonoBehaviour {
 
@@ -19,45 +19,41 @@ public class LocatorController : MonoBehaviour {
     [SerializeField]
     private GameObject SlideList = default;
 
-    private Vector3 camPos; 
-    private Transform camTr;
-
     [SerializeField]
     private Canvas modalCanvas = default;
 
+    [SerializeField]
+    private GameObject LocatorArrowObject = default;
+    
+    private float originalY;
+
+    public float floatStrength = 0.01f;
 
     // Start is called before the first frame update
     void Start(){
-        camTr  = Camera.main.transform;
-        camPos = camTr.position;
-       // targetTransform = imageTargetList.transform.GetChild(0).GetChild(0).GetComponent<Transform>();
        if(targetTransform != null){
            _followOffset = transform.position - targetTransform.position;
        }
        transform.gameObject.SetActive(false);
-        
+       originalY = transform.position.y;
     }
 
-    void LateUpdate() {
+    void Update() {
         if(targetTransform != null){
-            Transform arrow = transform.GetChild(0);
-           // Transform circle = transform.GetChild(1);
-            
-            arrow.transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward);
-         //   Vector3 targetPos = new Vector3(targetTransform.position.x, targetTransform.position.y + 0.03f, targetTransform.position.z);
             Vector3 targetPosition = targetTransform.position + _followOffset;
             transform.position += (targetPosition - transform.position);
-            
+            originalY = targetTransform.transform.position.y + 0.05f;
         }
+        initFloatingArrow();
+    }
+
+  private void initFloatingArrow(){
+        LocatorArrowObject.transform.position = new Vector3(LocatorArrowObject.transform.position.x,
+        originalY + ((float)Math.Sin(Time.time) * floatStrength), LocatorArrowObject.transform.position.z);
     }
 
     public void AddButtonListenerLocator(){
         modalCanvas.gameObject.SetActive(false);
-        camPos.x = transform.position.x;
-        camPos.y = transform.position.y;
-        camPos.z += 2.0f; // Zoom
-        camTr.position = Vector3.Lerp(camTr.position, camPos, Time.deltaTime * 2.5f);
-        Camera.main.transform.position = camTr.position;
         getTargetPosition();
     }
 
