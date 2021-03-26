@@ -160,8 +160,8 @@ extern void Label__ctor_m93493D7D3590A57D34E7F0525EE0F1B8A42E453B ();
 extern void LocatorController_Start_m00BA8094803607B751C39F60E2A8A5D622500739 ();
 // 0x00000046 System.Void LocatorController::Update()
 extern void LocatorController_Update_mCB78305FF4E4ED2C8A75121AE2C5261B38257929 ();
-// 0x00000047 System.Void LocatorController::getPositionOfLocator()
-extern void LocatorController_getPositionOfLocator_mDF967DDE615DD1A96D624D0D1279813E977DC7B6 ();
+// 0x00000047 System.Void LocatorController::initFloatingArrow()
+extern void LocatorController_initFloatingArrow_m61501FB28860374AA226D54ECBB1BC13324C28A8 ();
 // 0x00000048 System.Void LocatorController::AddButtonListenerLocator()
 extern void LocatorController_AddButtonListenerLocator_m39BA63E0B340A8BD7373D28244B04E692128CE67 ();
 // 0x00000049 System.Void LocatorController::getTargetPosition()
@@ -2387,7 +2387,7 @@ static Il2CppMethodPointer s_methodPointers[1190] =
 	Label__ctor_m93493D7D3590A57D34E7F0525EE0F1B8A42E453B,
 	LocatorController_Start_m00BA8094803607B751C39F60E2A8A5D622500739,
 	LocatorController_Update_mCB78305FF4E4ED2C8A75121AE2C5261B38257929,
-	LocatorController_getPositionOfLocator_mDF967DDE615DD1A96D624D0D1279813E977DC7B6,
+	LocatorController_initFloatingArrow_m61501FB28860374AA226D54ECBB1BC13324C28A8,
 	LocatorController_AddButtonListenerLocator_m39BA63E0B340A8BD7373D28244B04E692128CE67,
 	LocatorController_getTargetPosition_m9825D65BF649960FDCD343E6184E75107FC84C5A,
 	LocatorController__ctor_m4CAF7964AB07BD7DBAAB19B2B10EA13C3A864C6B,
