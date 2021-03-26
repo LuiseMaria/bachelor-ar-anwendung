@@ -1,11 +1,9 @@
-﻿#include "il2cpp-config.h"
-
+﻿#include "pch-c.h"
 #ifndef _MSC_VER
 # include <alloca.h>
 #else
 # include <malloc.h>
 #endif
-
 
 
 #include "codegen/il2cpp-codegen-metadata.h"
@@ -14,46 +12,55 @@
 
 
 
-IL2CPP_EXTERN_C_BEGIN
-IL2CPP_EXTERN_C_END
-
-
-
-
 // 0x00000001 UnityEngine.Quaternion UnityEngine.XR.Tango.PoseData::get_rotation()
-extern void PoseData_get_rotation_m8784EAC91FE13E8909E972A0AD9B9A9B9CAA2981_AdjustorThunk ();
+extern void PoseData_get_rotation_m5A437E71A2A609F49A484158C6D9B6101B53F449 (void);
 // 0x00000002 UnityEngine.Vector3 UnityEngine.XR.Tango.PoseData::get_position()
-extern void PoseData_get_position_m356B0853C5A393D0748E95FCBEF3BFDA9AC46D9B_AdjustorThunk ();
+extern void PoseData_get_position_m9E2784EAB0B0CAA7973468A26005A7588C0EF7A0 (void);
 // 0x00000003 System.Boolean UnityEngine.XR.Tango.TangoInputTracking::Internal_TryGetPoseAtTime(UnityEngine.XR.Tango.PoseData&)
-extern void TangoInputTracking_Internal_TryGetPoseAtTime_m6324D495343239E4BBEDF51EB99B056BC4BB260F ();
+extern void TangoInputTracking_Internal_TryGetPoseAtTime_mCFD0EEF32FD03A6788ED897B43F7F9638F8B3FEC (void);
 // 0x00000004 System.Boolean UnityEngine.XR.Tango.TangoInputTracking::TryGetPoseAtTime(UnityEngine.XR.Tango.PoseData&)
-extern void TangoInputTracking_TryGetPoseAtTime_m8AA6B8CEADE806F981A62E2928425265987F1C3F ();
+extern void TangoInputTracking_TryGetPoseAtTime_m5283E008A82EC10BF045A678E15B05A405B5C222 (void);
 static Il2CppMethodPointer s_methodPointers[4] = 
 {
-	PoseData_get_rotation_m8784EAC91FE13E8909E972A0AD9B9A9B9CAA2981_AdjustorThunk,
-	PoseData_get_position_m356B0853C5A393D0748E95FCBEF3BFDA9AC46D9B_AdjustorThunk,
-	TangoInputTracking_Internal_TryGetPoseAtTime_m6324D495343239E4BBEDF51EB99B056BC4BB260F,
-	TangoInputTracking_TryGetPoseAtTime_m8AA6B8CEADE806F981A62E2928425265987F1C3F,
+	PoseData_get_rotation_m5A437E71A2A609F49A484158C6D9B6101B53F449,
+	PoseData_get_position_m9E2784EAB0B0CAA7973468A26005A7588C0EF7A0,
+	TangoInputTracking_Internal_TryGetPoseAtTime_mCFD0EEF32FD03A6788ED897B43F7F9638F8B3FEC,
+	TangoInputTracking_TryGetPoseAtTime_m5283E008A82EC10BF045A678E15B05A405B5C222,
+};
+extern void PoseData_get_rotation_m5A437E71A2A609F49A484158C6D9B6101B53F449_AdjustorThunk (void);
+extern void PoseData_get_position_m9E2784EAB0B0CAA7973468A26005A7588C0EF7A0_AdjustorThunk (void);
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] = 
+{
+	{ 0x06000001, PoseData_get_rotation_m5A437E71A2A609F49A484158C6D9B6101B53F449_AdjustorThunk },
+	{ 0x06000002, PoseData_get_position_m9E2784EAB0B0CAA7973468A26005A7588C0EF7A0_AdjustorThunk },
 };
 static const int32_t s_InvokerIndices[4] = 
 {
-	1142,
-	1027,
-	326,
-	326,
+	2990,
+	3031,
+	4633,
+	4633,
 };
-extern const Il2CppCodeGenModule g_UnityEngine_ARModuleCodeGenModule;
-const Il2CppCodeGenModule g_UnityEngine_ARModuleCodeGenModule = 
+extern const CustomAttributesCacheGenerator g_UnityEngine_ARModule_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_ARModule_CodeGenModule;
+const Il2CppCodeGenModule g_UnityEngine_ARModule_CodeGenModule = 
 {
 	"UnityEngine.ARModule.dll",
 	4,
 	s_methodPointers,
+	2,
+	s_adjustorThunks,
 	s_InvokerIndices,
 	0,
 	NULL,
 	0,
 	NULL,
 	0,
+	NULL,
+	NULL,
+	g_UnityEngine_ARModule_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 };

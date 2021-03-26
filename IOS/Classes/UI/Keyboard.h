@@ -1,5 +1,7 @@
 #pragma once
 
+#import <AVFoundation/AVFoundation.h>
+
 typedef struct
 {
     const char* text;
@@ -12,6 +14,7 @@ typedef struct
     BOOL multiline;
     BOOL secure;
     int characterLimit;
+    BOOL oneTimeCode;
 }
 KeyboardShowParam;
 
@@ -27,6 +30,7 @@ KeyboardShowParam;
 - (void)keyboardWillShow:(NSNotification*)notification;
 - (void)keyboardDidShow:(NSNotification*)notification;
 - (void)keyboardWillHide:(NSNotification*)notification;
+- (void)keyboardDidHide:(NSNotification*)notification;
 - (void)becomeFirstResponder;
 
 // on older devices initial keyboard creation might be slow, so it is good to init in on initial loading.
@@ -57,5 +61,6 @@ KeyboardShowParam;
 @property (assign, nonatomic)   int characterLimit;
 @property (readonly, nonatomic)                                 BOOL        canGetSelection;
 @property (nonatomic, getter = querySelection, setter = assignSelection:)  NSRange   selection;
+@property (nonatomic)                                           BOOL        hasUsedDictation;
 
 @end

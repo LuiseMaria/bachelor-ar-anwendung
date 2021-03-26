@@ -2,19 +2,12 @@
 #include "IUnityInterface.h"
 #include "UnityAppController.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityARKitXRPlugin_PluginLoad(IUnityInterfaces* unityInterfaces);
-void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityARKitXRPlugin_SetupiOS(CGSize (UNITY_INTERFACE_API * GetUnityRootViewSizeFuncPtr)());
-#ifdef __cplusplus
-} // extern "C"
-#endif
+extern void UnityARKit_SetRootView(UIView* view);
 
-CGSize UNITY_INTERFACE_API GetUnityRootViewSize()
+void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityARKit_EnsureRootViewIsSetup()
 {
-    UnityAppController* appController = _UnityAppController;
-    return appController.rootView.bounds.size;
+    UnityARKit_SetRootView(_UnityAppController.rootView);
 }
 
 @interface UnityARKit : NSObject
@@ -27,8 +20,11 @@ CGSize UNITY_INTERFACE_API GetUnityRootViewSize()
 
 + (void)loadPlugin
 {
+    // This registers our plugin with Unity
     UnityRegisterRenderingPluginV5(UnityARKitXRPlugin_PluginLoad, NULL);
-    UnityARKitXRPlugin_SetupiOS(&GetUnityRootViewSize);
+
+    // This sets up some data our plugin will need later
+    UnityARKit_EnsureRootViewIsSetup();
 }
 
 @end

@@ -1,11 +1,9 @@
-﻿#include "il2cpp-config.h"
-
+﻿#include "pch-c.h"
 #ifndef _MSC_VER
 # include <alloca.h>
 #else
 # include <malloc.h>
 #endif
-
 
 
 #include "codegen/il2cpp-codegen-metadata.h"
@@ -14,287 +12,281 @@
 
 
 
-IL2CPP_EXTERN_C_BEGIN
-IL2CPP_EXTERN_C_END
-
-
-
-
 // 0x00000001 System.Void Lean.Common.LeanDestroy::Update()
-extern void LeanDestroy_Update_m707102390BCFF85D1076614DAFAE08EC88A79809 ();
+extern void LeanDestroy_Update_m25179D8EBD9A92C751A76D16126E1D99F311CBF4 (void);
 // 0x00000002 System.Void Lean.Common.LeanDestroy::DestroyNow()
-extern void LeanDestroy_DestroyNow_mA36CF042E32091CC87502E7083DBDCD60125BF6E ();
+extern void LeanDestroy_DestroyNow_m38263BEECFED448200EB6E3A32622562AAB1F6D9 (void);
 // 0x00000003 System.Void Lean.Common.LeanDestroy::.ctor()
-extern void LeanDestroy__ctor_m6A7FEE6F09E95AB897517B55D1D511BD837BAB86 ();
+extern void LeanDestroy__ctor_m8C1B23EBE187B63990D4085238A507C77E57E230 (void);
 // 0x00000004 System.Int32 Lean.Common.LeanPath::get_PointCount()
-extern void LeanPath_get_PointCount_m1F2A4108C85A6FDD88714C9AC7C1215BEB96F46E ();
+extern void LeanPath_get_PointCount_mE7712D04732EFE0A30341970CB76BD2280E001E1 (void);
 // 0x00000005 System.Int32 Lean.Common.LeanPath::GetPointCount(System.Int32)
-extern void LeanPath_GetPointCount_m7B275FF5BD1ECFEE2A6D422CC8789EF37EB2EF83 ();
+extern void LeanPath_GetPointCount_mE90DA90825B66847E25C2BD4DA62EEE38CA6C080 (void);
 // 0x00000006 UnityEngine.Vector3 Lean.Common.LeanPath::GetSmoothedPoint(System.Single)
-extern void LeanPath_GetSmoothedPoint_m9BFEABAD86458A03A551E4ED946C92CD2951FE8D ();
+extern void LeanPath_GetSmoothedPoint_m472311575A9C18EFA2FCF6B407AA704A1C0CF98B (void);
 // 0x00000007 UnityEngine.Vector3 Lean.Common.LeanPath::GetPoint(System.Int32,System.Int32)
-extern void LeanPath_GetPoint_mBB74D5F909B33F2B0AA75C5747497F6872BFDE96 ();
+extern void LeanPath_GetPoint_m60568FA844930C3701B71E62C0DCF0162ACEDBEC (void);
 // 0x00000008 UnityEngine.Vector3 Lean.Common.LeanPath::GetPointRaw(System.Int32,System.Int32)
-extern void LeanPath_GetPointRaw_mCDCA909AFBC56F2BFCE0F73EE6F3D9F45AC373DC ();
+extern void LeanPath_GetPointRaw_m72EAE7F52915E276FFA6504C1831A5248D00782D (void);
 // 0x00000009 System.Void Lean.Common.LeanPath::SetLine(UnityEngine.Vector3,UnityEngine.Vector3)
-extern void LeanPath_SetLine_m8353B0C03DF983CF742D6053F573D4340A569087 ();
+extern void LeanPath_SetLine_m153D42778DDD9FD1AAE075D30A34E1E806E27F3B (void);
 // 0x0000000A System.Boolean Lean.Common.LeanPath::TryGetClosest(UnityEngine.Vector3,UnityEngine.Vector3&,System.Int32&,System.Int32&,System.Int32)
-extern void LeanPath_TryGetClosest_m8CE444A6FAA81D7C1CA1C8E076C2A586FD6AC4F4 ();
+extern void LeanPath_TryGetClosest_m24BB3F450EB821CB846AF9ED965AE453A6E9D696 (void);
 // 0x0000000B System.Boolean Lean.Common.LeanPath::TryGetClosest(UnityEngine.Vector3,UnityEngine.Vector3&,System.Int32)
-extern void LeanPath_TryGetClosest_m522C7E9CAA3A3572F9D8622EC1815DA29BC0026C ();
+extern void LeanPath_TryGetClosest_m66A6588D55204618E1E91D9C477540AFB9687EA7 (void);
 // 0x0000000C System.Boolean Lean.Common.LeanPath::TryGetClosest(UnityEngine.Ray,UnityEngine.Vector3&,System.Int32&,System.Int32&,System.Int32)
-extern void LeanPath_TryGetClosest_m5DD4F03D5C42DC23AC86DCB45D36AFB080E7B823 ();
+extern void LeanPath_TryGetClosest_m8F274D4928137B51AC6C8FA300AD7ED7C716EF96 (void);
 // 0x0000000D System.Boolean Lean.Common.LeanPath::TryGetClosest(UnityEngine.Ray,UnityEngine.Vector3&,System.Int32)
-extern void LeanPath_TryGetClosest_m674346FA3F2AAE1DCB71271C57E056DED9570F1B ();
+extern void LeanPath_TryGetClosest_mC62CB74B0CE17E92254687DF0B0DEB07D798E887 (void);
 // 0x0000000E System.Boolean Lean.Common.LeanPath::TryGetClosest(UnityEngine.Ray,UnityEngine.Vector3&,System.Int32,System.Single)
-extern void LeanPath_TryGetClosest_m3B152CCCDBD861184DF4E6400E2A77643B70D82C ();
+extern void LeanPath_TryGetClosest_mD279682727C1B6612D357DBCAE7CF6E71D71FA64 (void);
 // 0x0000000F UnityEngine.Vector3 Lean.Common.LeanPath::GetClosestPoint(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
-extern void LeanPath_GetClosestPoint_mEBEE16114D59404DF10CF75E5D121376887B2E48 ();
+extern void LeanPath_GetClosestPoint_mE6DA614D84264B755D09510403A68713C843FBFB (void);
 // 0x00000010 UnityEngine.Vector3 Lean.Common.LeanPath::GetClosestPoint(UnityEngine.Ray,UnityEngine.Vector3,UnityEngine.Vector3)
-extern void LeanPath_GetClosestPoint_m24B13DFD725ECDC0E2A9FB8657788218A32F4774 ();
+extern void LeanPath_GetClosestPoint_m8B4CEC94F9F83FC64839FB94A8806364AAFE110E (void);
 // 0x00000011 System.Single Lean.Common.LeanPath::GetClosestDistance(UnityEngine.Ray,UnityEngine.Vector3)
-extern void LeanPath_GetClosestDistance_mCC3C20818C7FB71904AF322ABED2DA92F9CFD07D ();
+extern void LeanPath_GetClosestDistance_m5D871460B153734F617FF1BF96FFE7C007399BCF (void);
 // 0x00000012 System.Int32 Lean.Common.LeanPath::Mod(System.Int32,System.Int32)
-extern void LeanPath_Mod_m22A5B9C0614A452EB0425726BE6ED7DA5F5915B4 ();
+extern void LeanPath_Mod_m6379BAD953FC478C6695D896A3FED050AACD8197 (void);
 // 0x00000013 System.Single Lean.Common.LeanPath::CubicInterpolate(System.Single,System.Single,System.Single,System.Single,System.Single)
-extern void LeanPath_CubicInterpolate_m479A58CB17EAD73E5C9BD7551DC1AC16FCBD1384 ();
+extern void LeanPath_CubicInterpolate_mAD6D6F947ED1416D7D749578996AE2942F1F3BAF (void);
 // 0x00000014 System.Void Lean.Common.LeanPath::UpdateVisual()
-extern void LeanPath_UpdateVisual_mC2538CAECF67C057C3E63D711C9F3FCCF0BEFEB7 ();
+extern void LeanPath_UpdateVisual_mBC74CDD7B3B7917211B1BEC9318402D877478F06 (void);
 // 0x00000015 System.Void Lean.Common.LeanPath::Update()
-extern void LeanPath_Update_m5FBC3F4AD177C2DEB70403ED8A634548BB51A98D ();
+extern void LeanPath_Update_m0F5BCB02ABDE4FD49F18F6656B535129A233E875 (void);
 // 0x00000016 System.Void Lean.Common.LeanPath::.ctor()
-extern void LeanPath__ctor_m22AAE4CE011E924B6E177365E66BCF3EA65B0C0F ();
+extern void LeanPath__ctor_m45850D1E8D171BE0ED2F8C31931179B9F229CDEF (void);
 // 0x00000017 System.Void Lean.Common.LeanPath::.cctor()
-extern void LeanPath__cctor_m6E069862EC063374F8E6EDCC6FFF47DD1243A094 ();
+extern void LeanPath__cctor_m27AAAC0AD8A7AE8CD8F4ADC47DCE8984D30EF1FB (void);
 // 0x00000018 UnityEngine.Vector3 Lean.Common.LeanPlane::GetClosest(UnityEngine.Vector3,System.Single)
-extern void LeanPlane_GetClosest_mF1FD4FC1680FC7D097E8A69A02462F3DCD6D0AD3 ();
+extern void LeanPlane_GetClosest_mF29C8BE9DCF8414741D25EA43CAE4677E0C8B2A7 (void);
 // 0x00000019 System.Boolean Lean.Common.LeanPlane::TryRaycast(UnityEngine.Ray,UnityEngine.Vector3&,System.Single,System.Boolean)
-extern void LeanPlane_TryRaycast_mA06C6F3D6ED97BB41A2EFB189B61628730AE374E ();
+extern void LeanPlane_TryRaycast_m87DD3E00652721EDEB9F3C47D6D1740C1E239194 (void);
 // 0x0000001A UnityEngine.Vector3 Lean.Common.LeanPlane::GetClosest(UnityEngine.Ray,System.Single)
-extern void LeanPlane_GetClosest_m9AD009BC6123E44680461561A01A1D8DEF4400FF ();
+extern void LeanPlane_GetClosest_mF108A76DAB65B4AEB883126E386016E6B801C0EC (void);
 // 0x0000001B System.Boolean Lean.Common.LeanPlane::RayToPlane(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Ray,System.Single&)
-extern void LeanPlane_RayToPlane_mF2226373B89F46445B2DA5BA72172AB7910AA417 ();
+extern void LeanPlane_RayToPlane_mF7E64345F8C913052D9C76613E7E9DF6F55C1EBC (void);
 // 0x0000001C System.Void Lean.Common.LeanPlane::.ctor()
-extern void LeanPlane__ctor_mBBE7FE0AB0C4EC882224F154EFC1432B1CE07A2E ();
+extern void LeanPlane__ctor_m308647E9CEB6A51505C77A4DD53F3A3197C3E5B7 (void);
 // 0x0000001D System.Void Lean.Common.LeanRoll::IncrementAngle(System.Single)
-extern void LeanRoll_IncrementAngle_m8A93D17ACB0D437501196E5B1FC2E2F79F420D5D ();
+extern void LeanRoll_IncrementAngle_mCCFBC939981484CC13F3E22CC4480D785E849D95 (void);
 // 0x0000001E System.Void Lean.Common.LeanRoll::DecrementAngle(System.Single)
-extern void LeanRoll_DecrementAngle_m3C95A15761B6EE1421CCCCADE7F51B631E143D8D ();
+extern void LeanRoll_DecrementAngle_m71376A88042972CB7CDAE6E7C03308A86B9CB680 (void);
 // 0x0000001F System.Void Lean.Common.LeanRoll::RotateToDelta(UnityEngine.Vector2)
-extern void LeanRoll_RotateToDelta_m94748E038BA0C64728C9E900DAD5953B3452A51D ();
+extern void LeanRoll_RotateToDelta_m7368DC91DA3D1B86EBDE454EE00747BFEF28B10D (void);
 // 0x00000020 System.Void Lean.Common.LeanRoll::SnapToTarget()
-extern void LeanRoll_SnapToTarget_m4B30673462D0C47154D2E7978BD820E40E7967A9 ();
+extern void LeanRoll_SnapToTarget_m9E7620208CF34541ABBEAF5D44F3140FCBBC231E (void);
 // 0x00000021 System.Void Lean.Common.LeanRoll::Start()
-extern void LeanRoll_Start_m3491245DF88E8CDA9F21C412F44EC47069AA110C ();
+extern void LeanRoll_Start_mD8C9AEAB8243902885ED4F7E0469711759A3355E (void);
 // 0x00000022 System.Void Lean.Common.LeanRoll::Update()
-extern void LeanRoll_Update_mD3D02C5FD7B876CBEF6B4807BE56B02D36688A06 ();
+extern void LeanRoll_Update_m468BD6003274540999765BD4C3C856FD1DF7A77F (void);
 // 0x00000023 System.Void Lean.Common.LeanRoll::.ctor()
-extern void LeanRoll__ctor_mD9EE4D575752BD0002EE249DF4F32E4AC4B8349F ();
+extern void LeanRoll__ctor_m6E934F7F629F2D424B9C250763DB3ABB461387C9 (void);
 // 0x00000024 System.Void Lean.Common.LeanSpawn::Spawn()
-extern void LeanSpawn_Spawn_m3C9A195396DEF7E950D61E0DC3AC0EFD5C4266E3 ();
+extern void LeanSpawn_Spawn_m79979CDCB3B6F6978FCA3A82D87A016C70BEC9E3 (void);
 // 0x00000025 System.Void Lean.Common.LeanSpawn::Spawn(UnityEngine.Vector3)
-extern void LeanSpawn_Spawn_m631348EDD1CD95BBB3AAC62FDEB142654AA122B2 ();
+extern void LeanSpawn_Spawn_mE97973803E75458F3FF368884299425BB526F5D4 (void);
 // 0x00000026 System.Void Lean.Common.LeanSpawn::.ctor()
-extern void LeanSpawn__ctor_mFE1F9E6427AD5099751DC7ABE5BA96B3C992B3AC ();
+extern void LeanSpawn__ctor_m53FAE61B4A59312C4637240A7F81FF6852C793D1 (void);
 // 0x00000027 T Lean.Common.LeanHelper::CreateElement(UnityEngine.Transform)
 // 0x00000028 System.Single Lean.Common.LeanHelper::GetDampenFactor(System.Single,System.Single)
-extern void LeanHelper_GetDampenFactor_mDCE92ADEFA6CD274B18AFD9C541529DD3DBA4642 ();
+extern void LeanHelper_GetDampenFactor_m08D755CC7F4B555727308735DC24BCCEB8F5EFD2 (void);
 // 0x00000029 T Lean.Common.LeanHelper::Destroy(T)
 // 0x0000002A UnityEngine.Camera Lean.Common.LeanHelper::GetCamera(UnityEngine.Camera,UnityEngine.GameObject)
-extern void LeanHelper_GetCamera_m36B3A0AE813922D60EB7E218A95D9DEB7C87F130 ();
+extern void LeanHelper_GetCamera_m7704124C57B1B422838F8B17B96B632D70735A6A (void);
 // 0x0000002B UnityEngine.Vector2 Lean.Common.LeanHelper::Hermite(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Single)
-extern void LeanHelper_Hermite_m35A2F34689850BA2589424A73D7D85DB9439BA07 ();
+extern void LeanHelper_Hermite_m9D0F1EEC74B3ECE3A52D01D93714F826B28D2C4F (void);
 // 0x0000002C System.Single Lean.Common.LeanHelper::HermiteInterpolate(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
-extern void LeanHelper_HermiteInterpolate_mF2AE41410718AC18E55CB19A54BD0DCBE561E2E5 ();
+extern void LeanHelper_HermiteInterpolate_m43CEA9D736BD06751B6C615FC113BE3188F9BC16 (void);
 // 0x0000002D System.Int32 Lean.Common.LeanInput::GetTouchCount()
-extern void LeanInput_GetTouchCount_m743D94DD8A026F81487144ABC8F375015AE0F091 ();
+extern void LeanInput_GetTouchCount_mDC4B8CDD0070853D465121802A304A25F8DB7B30 (void);
 // 0x0000002E System.Void Lean.Common.LeanInput::GetTouch(System.Int32,System.Int32&,UnityEngine.Vector2&,System.Single&,System.Boolean&)
-extern void LeanInput_GetTouch_m364DE97BB5C7954B8B34C5E9331BFAA9D72C09A5 ();
+extern void LeanInput_GetTouch_m2740ED66E91AE53502778A828A55AACC56645A74 (void);
 // 0x0000002F UnityEngine.Vector2 Lean.Common.LeanInput::GetMousePosition()
-extern void LeanInput_GetMousePosition_mF3EF9EF9D99349CA88667DF4BB9EACED4F34A2A1 ();
+extern void LeanInput_GetMousePosition_mC8F5C4E428406D770D4CAEB59FEA17B4826F79F3 (void);
 // 0x00000030 System.Boolean Lean.Common.LeanInput::GetDown(UnityEngine.KeyCode)
-extern void LeanInput_GetDown_m1B52B3952558F4B1CC05336879F18A40C8D78B87 ();
+extern void LeanInput_GetDown_m3ED31CEFF389A88173DAB22ED991609EA2755701 (void);
 // 0x00000031 System.Boolean Lean.Common.LeanInput::GetPressed(UnityEngine.KeyCode)
-extern void LeanInput_GetPressed_m4ABB38639517EA80AC0CA60309DF253EE2B0A5C5 ();
+extern void LeanInput_GetPressed_m35017474B36541C96C8A73340A4AD78BFE1617C4 (void);
 // 0x00000032 System.Boolean Lean.Common.LeanInput::GetUp(UnityEngine.KeyCode)
-extern void LeanInput_GetUp_m7B05ADFCF13FCC16C0E599DE0CFC5A343B2B962A ();
+extern void LeanInput_GetUp_mE870EE3A7DF3A21A388A1C2BCE5EFCF3EF46DBBC (void);
 // 0x00000033 System.Boolean Lean.Common.LeanInput::GetMouseDown(System.Int32)
-extern void LeanInput_GetMouseDown_m8161E4CE4739BD23193B840FF0B66FD9F8590C0A ();
+extern void LeanInput_GetMouseDown_mBBB84BAF5D54B198807453CA2D6FDAD374F41245 (void);
 // 0x00000034 System.Boolean Lean.Common.LeanInput::GetMousePressed(System.Int32)
-extern void LeanInput_GetMousePressed_mE8D78DF920BFC9AB30B4B43C0BF08D6FCC29B8FA ();
+extern void LeanInput_GetMousePressed_mC86304BA47E85574EDEDBEC6AC4115FAA8C0B1C8 (void);
 // 0x00000035 System.Boolean Lean.Common.LeanInput::GetMouseUp(System.Int32)
-extern void LeanInput_GetMouseUp_m8EA0949707BB8F058BCF4AD007092426BEC47A37 ();
+extern void LeanInput_GetMouseUp_m3111302F9E3F539A55C76174CB232DF2FBAE0738 (void);
 // 0x00000036 System.Single Lean.Common.LeanInput::GetMouseWheelDelta()
-extern void LeanInput_GetMouseWheelDelta_m2934275461C131FF46469D81AA0A4FEF52EF7E41 ();
+extern void LeanInput_GetMouseWheelDelta_m5C881BBB8D7FED7AE7C7EE37E0B74DFD77529E36 (void);
 // 0x00000037 System.Boolean Lean.Common.LeanInput::GetMouseExists()
-extern void LeanInput_GetMouseExists_m99A1F8CB4034816DA7BA21E80E4B9AEC9E073FDC ();
+extern void LeanInput_GetMouseExists_m92D1E94099D2A4BBA1D57ED1F01A89707A382022 (void);
 // 0x00000038 System.Boolean Lean.Common.LeanInput::GetKeyboardExists()
-extern void LeanInput_GetKeyboardExists_mB7CF38C72DF798E02BA4A513545B958301626332 ();
+extern void LeanInput_GetKeyboardExists_m8177D65E95B35949D86639D2DBC7B174DB94173D (void);
 // 0x00000039 UnityEngine.Texture2D Lean.Common.Examples.LeanGuide::get_Icon()
-extern void LeanGuide_get_Icon_m680AAEA366808134A4589CB715966342DB361FF0 ();
+extern void LeanGuide_get_Icon_m25673F1F5D25EE98C81375D95C904485194C0998 (void);
 // 0x0000003A System.String Lean.Common.Examples.LeanGuide::get_Version()
-extern void LeanGuide_get_Version_m41A126EFCD85E72863A32EC17135DA32FFAE55F2 ();
+extern void LeanGuide_get_Version_mF3D528BD1854D9C0B5BAC57CFE50EF688DC7DE51 (void);
 // 0x0000003B System.Void Lean.Common.Examples.LeanGuide::.ctor()
-extern void LeanGuide__ctor_m2A8BFCB853FD105F4954991E4A823CF0ED41DECA ();
-// 0x0000003C System.Void Lean.Common.Examples.LeanLinkTo::set_Link(Lean.Common.Examples.LeanLinkTo_LinkType)
-extern void LeanLinkTo_set_Link_mD08163285B0754B3EBE24F3CD661AC87D22774BD ();
-// 0x0000003D Lean.Common.Examples.LeanLinkTo_LinkType Lean.Common.Examples.LeanLinkTo::get_Link()
-extern void LeanLinkTo_get_Link_m6C153A64C1F1B6B610477DC951F05E0BB473DAEE ();
+extern void LeanGuide__ctor_mE81BC3E146C21ABE4FE5A72FE9E6C250161118FD (void);
+// 0x0000003C System.Void Lean.Common.Examples.LeanLinkTo::set_Link(Lean.Common.Examples.LeanLinkTo/LinkType)
+extern void LeanLinkTo_set_Link_m42FBB5C11C6DE29069AA540EDC379038B76FF41B (void);
+// 0x0000003D Lean.Common.Examples.LeanLinkTo/LinkType Lean.Common.Examples.LeanLinkTo::get_Link()
+extern void LeanLinkTo_get_Link_m7EA271D4A0344353BD41249AA8F8BF5B824B360A (void);
 // 0x0000003E System.Void Lean.Common.Examples.LeanLinkTo::Update()
-extern void LeanLinkTo_Update_m65D9FF85D61F5F7E3A4AAB52567A2C31B8DD1E1E ();
+extern void LeanLinkTo_Update_mAB559E652325AC2C8812CF71C1DDE73ABBDAC961 (void);
 // 0x0000003F System.Void Lean.Common.Examples.LeanLinkTo::OnPointerClick(UnityEngine.EventSystems.PointerEventData)
-extern void LeanLinkTo_OnPointerClick_mCE3075979F3721650C5CE5B574578C4225A71881 ();
+extern void LeanLinkTo_OnPointerClick_mF10F593C01597DF51ABF5D85AF5299C2528D53D9 (void);
 // 0x00000040 System.Int32 Lean.Common.Examples.LeanLinkTo::GetCurrentLevel()
-extern void LeanLinkTo_GetCurrentLevel_m1D365D688EE573BC58128D9B49F795A71CE41523 ();
+extern void LeanLinkTo_GetCurrentLevel_mE9DBA2BB90C48653A2D3612230650DA80676701D (void);
 // 0x00000041 System.Int32 Lean.Common.Examples.LeanLinkTo::GetLevelCount()
-extern void LeanLinkTo_GetLevelCount_m7E99F5206E716B18DADE56CFA6B7AE6624633B67 ();
+extern void LeanLinkTo_GetLevelCount_mB72F33FA63FCE2737C4921D3C893C2B9F8048DAA (void);
 // 0x00000042 System.Void Lean.Common.Examples.LeanLinkTo::LoadLevel(System.Int32)
-extern void LeanLinkTo_LoadLevel_m62C55C0442228C95BAAB043631BDB8FDD5BA7626 ();
+extern void LeanLinkTo_LoadLevel_m431770D7FD5812526D3DB3D1537AC26018F96F54 (void);
 // 0x00000043 System.Void Lean.Common.Examples.LeanLinkTo::.ctor()
-extern void LeanLinkTo__ctor_m8D6B0032479F4C40EC6EA88A8CB586E8A588DAC6 ();
+extern void LeanLinkTo__ctor_m3072A3056CDC89CB5D4D81C65B67A42021CD0353 (void);
 // 0x00000044 System.Void Lean.Common.Examples.LeanUpgradeEventSystem::.ctor()
-extern void LeanUpgradeEventSystem__ctor_m14DC4D653F96605CC675980F58EB2F50C77A8DEB ();
+extern void LeanUpgradeEventSystem__ctor_mA5C2A5813F15E2D67C039C42371185DB6DDA18F3 (void);
 static Il2CppMethodPointer s_methodPointers[68] = 
 {
-	LeanDestroy_Update_m707102390BCFF85D1076614DAFAE08EC88A79809,
-	LeanDestroy_DestroyNow_mA36CF042E32091CC87502E7083DBDCD60125BF6E,
-	LeanDestroy__ctor_m6A7FEE6F09E95AB897517B55D1D511BD837BAB86,
-	LeanPath_get_PointCount_m1F2A4108C85A6FDD88714C9AC7C1215BEB96F46E,
-	LeanPath_GetPointCount_m7B275FF5BD1ECFEE2A6D422CC8789EF37EB2EF83,
-	LeanPath_GetSmoothedPoint_m9BFEABAD86458A03A551E4ED946C92CD2951FE8D,
-	LeanPath_GetPoint_mBB74D5F909B33F2B0AA75C5747497F6872BFDE96,
-	LeanPath_GetPointRaw_mCDCA909AFBC56F2BFCE0F73EE6F3D9F45AC373DC,
-	LeanPath_SetLine_m8353B0C03DF983CF742D6053F573D4340A569087,
-	LeanPath_TryGetClosest_m8CE444A6FAA81D7C1CA1C8E076C2A586FD6AC4F4,
-	LeanPath_TryGetClosest_m522C7E9CAA3A3572F9D8622EC1815DA29BC0026C,
-	LeanPath_TryGetClosest_m5DD4F03D5C42DC23AC86DCB45D36AFB080E7B823,
-	LeanPath_TryGetClosest_m674346FA3F2AAE1DCB71271C57E056DED9570F1B,
-	LeanPath_TryGetClosest_m3B152CCCDBD861184DF4E6400E2A77643B70D82C,
-	LeanPath_GetClosestPoint_mEBEE16114D59404DF10CF75E5D121376887B2E48,
-	LeanPath_GetClosestPoint_m24B13DFD725ECDC0E2A9FB8657788218A32F4774,
-	LeanPath_GetClosestDistance_mCC3C20818C7FB71904AF322ABED2DA92F9CFD07D,
-	LeanPath_Mod_m22A5B9C0614A452EB0425726BE6ED7DA5F5915B4,
-	LeanPath_CubicInterpolate_m479A58CB17EAD73E5C9BD7551DC1AC16FCBD1384,
-	LeanPath_UpdateVisual_mC2538CAECF67C057C3E63D711C9F3FCCF0BEFEB7,
-	LeanPath_Update_m5FBC3F4AD177C2DEB70403ED8A634548BB51A98D,
-	LeanPath__ctor_m22AAE4CE011E924B6E177365E66BCF3EA65B0C0F,
-	LeanPath__cctor_m6E069862EC063374F8E6EDCC6FFF47DD1243A094,
-	LeanPlane_GetClosest_mF1FD4FC1680FC7D097E8A69A02462F3DCD6D0AD3,
-	LeanPlane_TryRaycast_mA06C6F3D6ED97BB41A2EFB189B61628730AE374E,
-	LeanPlane_GetClosest_m9AD009BC6123E44680461561A01A1D8DEF4400FF,
-	LeanPlane_RayToPlane_mF2226373B89F46445B2DA5BA72172AB7910AA417,
-	LeanPlane__ctor_mBBE7FE0AB0C4EC882224F154EFC1432B1CE07A2E,
-	LeanRoll_IncrementAngle_m8A93D17ACB0D437501196E5B1FC2E2F79F420D5D,
-	LeanRoll_DecrementAngle_m3C95A15761B6EE1421CCCCADE7F51B631E143D8D,
-	LeanRoll_RotateToDelta_m94748E038BA0C64728C9E900DAD5953B3452A51D,
-	LeanRoll_SnapToTarget_m4B30673462D0C47154D2E7978BD820E40E7967A9,
-	LeanRoll_Start_m3491245DF88E8CDA9F21C412F44EC47069AA110C,
-	LeanRoll_Update_mD3D02C5FD7B876CBEF6B4807BE56B02D36688A06,
-	LeanRoll__ctor_mD9EE4D575752BD0002EE249DF4F32E4AC4B8349F,
-	LeanSpawn_Spawn_m3C9A195396DEF7E950D61E0DC3AC0EFD5C4266E3,
-	LeanSpawn_Spawn_m631348EDD1CD95BBB3AAC62FDEB142654AA122B2,
-	LeanSpawn__ctor_mFE1F9E6427AD5099751DC7ABE5BA96B3C992B3AC,
+	LeanDestroy_Update_m25179D8EBD9A92C751A76D16126E1D99F311CBF4,
+	LeanDestroy_DestroyNow_m38263BEECFED448200EB6E3A32622562AAB1F6D9,
+	LeanDestroy__ctor_m8C1B23EBE187B63990D4085238A507C77E57E230,
+	LeanPath_get_PointCount_mE7712D04732EFE0A30341970CB76BD2280E001E1,
+	LeanPath_GetPointCount_mE90DA90825B66847E25C2BD4DA62EEE38CA6C080,
+	LeanPath_GetSmoothedPoint_m472311575A9C18EFA2FCF6B407AA704A1C0CF98B,
+	LeanPath_GetPoint_m60568FA844930C3701B71E62C0DCF0162ACEDBEC,
+	LeanPath_GetPointRaw_m72EAE7F52915E276FFA6504C1831A5248D00782D,
+	LeanPath_SetLine_m153D42778DDD9FD1AAE075D30A34E1E806E27F3B,
+	LeanPath_TryGetClosest_m24BB3F450EB821CB846AF9ED965AE453A6E9D696,
+	LeanPath_TryGetClosest_m66A6588D55204618E1E91D9C477540AFB9687EA7,
+	LeanPath_TryGetClosest_m8F274D4928137B51AC6C8FA300AD7ED7C716EF96,
+	LeanPath_TryGetClosest_mC62CB74B0CE17E92254687DF0B0DEB07D798E887,
+	LeanPath_TryGetClosest_mD279682727C1B6612D357DBCAE7CF6E71D71FA64,
+	LeanPath_GetClosestPoint_mE6DA614D84264B755D09510403A68713C843FBFB,
+	LeanPath_GetClosestPoint_m8B4CEC94F9F83FC64839FB94A8806364AAFE110E,
+	LeanPath_GetClosestDistance_m5D871460B153734F617FF1BF96FFE7C007399BCF,
+	LeanPath_Mod_m6379BAD953FC478C6695D896A3FED050AACD8197,
+	LeanPath_CubicInterpolate_mAD6D6F947ED1416D7D749578996AE2942F1F3BAF,
+	LeanPath_UpdateVisual_mBC74CDD7B3B7917211B1BEC9318402D877478F06,
+	LeanPath_Update_m0F5BCB02ABDE4FD49F18F6656B535129A233E875,
+	LeanPath__ctor_m45850D1E8D171BE0ED2F8C31931179B9F229CDEF,
+	LeanPath__cctor_m27AAAC0AD8A7AE8CD8F4ADC47DCE8984D30EF1FB,
+	LeanPlane_GetClosest_mF29C8BE9DCF8414741D25EA43CAE4677E0C8B2A7,
+	LeanPlane_TryRaycast_m87DD3E00652721EDEB9F3C47D6D1740C1E239194,
+	LeanPlane_GetClosest_mF108A76DAB65B4AEB883126E386016E6B801C0EC,
+	LeanPlane_RayToPlane_mF7E64345F8C913052D9C76613E7E9DF6F55C1EBC,
+	LeanPlane__ctor_m308647E9CEB6A51505C77A4DD53F3A3197C3E5B7,
+	LeanRoll_IncrementAngle_mCCFBC939981484CC13F3E22CC4480D785E849D95,
+	LeanRoll_DecrementAngle_m71376A88042972CB7CDAE6E7C03308A86B9CB680,
+	LeanRoll_RotateToDelta_m7368DC91DA3D1B86EBDE454EE00747BFEF28B10D,
+	LeanRoll_SnapToTarget_m9E7620208CF34541ABBEAF5D44F3140FCBBC231E,
+	LeanRoll_Start_mD8C9AEAB8243902885ED4F7E0469711759A3355E,
+	LeanRoll_Update_m468BD6003274540999765BD4C3C856FD1DF7A77F,
+	LeanRoll__ctor_m6E934F7F629F2D424B9C250763DB3ABB461387C9,
+	LeanSpawn_Spawn_m79979CDCB3B6F6978FCA3A82D87A016C70BEC9E3,
+	LeanSpawn_Spawn_mE97973803E75458F3FF368884299425BB526F5D4,
+	LeanSpawn__ctor_m53FAE61B4A59312C4637240A7F81FF6852C793D1,
 	NULL,
-	LeanHelper_GetDampenFactor_mDCE92ADEFA6CD274B18AFD9C541529DD3DBA4642,
+	LeanHelper_GetDampenFactor_m08D755CC7F4B555727308735DC24BCCEB8F5EFD2,
 	NULL,
-	LeanHelper_GetCamera_m36B3A0AE813922D60EB7E218A95D9DEB7C87F130,
-	LeanHelper_Hermite_m35A2F34689850BA2589424A73D7D85DB9439BA07,
-	LeanHelper_HermiteInterpolate_mF2AE41410718AC18E55CB19A54BD0DCBE561E2E5,
-	LeanInput_GetTouchCount_m743D94DD8A026F81487144ABC8F375015AE0F091,
-	LeanInput_GetTouch_m364DE97BB5C7954B8B34C5E9331BFAA9D72C09A5,
-	LeanInput_GetMousePosition_mF3EF9EF9D99349CA88667DF4BB9EACED4F34A2A1,
-	LeanInput_GetDown_m1B52B3952558F4B1CC05336879F18A40C8D78B87,
-	LeanInput_GetPressed_m4ABB38639517EA80AC0CA60309DF253EE2B0A5C5,
-	LeanInput_GetUp_m7B05ADFCF13FCC16C0E599DE0CFC5A343B2B962A,
-	LeanInput_GetMouseDown_m8161E4CE4739BD23193B840FF0B66FD9F8590C0A,
-	LeanInput_GetMousePressed_mE8D78DF920BFC9AB30B4B43C0BF08D6FCC29B8FA,
-	LeanInput_GetMouseUp_m8EA0949707BB8F058BCF4AD007092426BEC47A37,
-	LeanInput_GetMouseWheelDelta_m2934275461C131FF46469D81AA0A4FEF52EF7E41,
-	LeanInput_GetMouseExists_m99A1F8CB4034816DA7BA21E80E4B9AEC9E073FDC,
-	LeanInput_GetKeyboardExists_mB7CF38C72DF798E02BA4A513545B958301626332,
-	LeanGuide_get_Icon_m680AAEA366808134A4589CB715966342DB361FF0,
-	LeanGuide_get_Version_m41A126EFCD85E72863A32EC17135DA32FFAE55F2,
-	LeanGuide__ctor_m2A8BFCB853FD105F4954991E4A823CF0ED41DECA,
-	LeanLinkTo_set_Link_mD08163285B0754B3EBE24F3CD661AC87D22774BD,
-	LeanLinkTo_get_Link_m6C153A64C1F1B6B610477DC951F05E0BB473DAEE,
-	LeanLinkTo_Update_m65D9FF85D61F5F7E3A4AAB52567A2C31B8DD1E1E,
-	LeanLinkTo_OnPointerClick_mCE3075979F3721650C5CE5B574578C4225A71881,
-	LeanLinkTo_GetCurrentLevel_m1D365D688EE573BC58128D9B49F795A71CE41523,
-	LeanLinkTo_GetLevelCount_m7E99F5206E716B18DADE56CFA6B7AE6624633B67,
-	LeanLinkTo_LoadLevel_m62C55C0442228C95BAAB043631BDB8FDD5BA7626,
-	LeanLinkTo__ctor_m8D6B0032479F4C40EC6EA88A8CB586E8A588DAC6,
-	LeanUpgradeEventSystem__ctor_m14DC4D653F96605CC675980F58EB2F50C77A8DEB,
+	LeanHelper_GetCamera_m7704124C57B1B422838F8B17B96B632D70735A6A,
+	LeanHelper_Hermite_m9D0F1EEC74B3ECE3A52D01D93714F826B28D2C4F,
+	LeanHelper_HermiteInterpolate_m43CEA9D736BD06751B6C615FC113BE3188F9BC16,
+	LeanInput_GetTouchCount_mDC4B8CDD0070853D465121802A304A25F8DB7B30,
+	LeanInput_GetTouch_m2740ED66E91AE53502778A828A55AACC56645A74,
+	LeanInput_GetMousePosition_mC8F5C4E428406D770D4CAEB59FEA17B4826F79F3,
+	LeanInput_GetDown_m3ED31CEFF389A88173DAB22ED991609EA2755701,
+	LeanInput_GetPressed_m35017474B36541C96C8A73340A4AD78BFE1617C4,
+	LeanInput_GetUp_mE870EE3A7DF3A21A388A1C2BCE5EFCF3EF46DBBC,
+	LeanInput_GetMouseDown_mBBB84BAF5D54B198807453CA2D6FDAD374F41245,
+	LeanInput_GetMousePressed_mC86304BA47E85574EDEDBEC6AC4115FAA8C0B1C8,
+	LeanInput_GetMouseUp_m3111302F9E3F539A55C76174CB232DF2FBAE0738,
+	LeanInput_GetMouseWheelDelta_m5C881BBB8D7FED7AE7C7EE37E0B74DFD77529E36,
+	LeanInput_GetMouseExists_m92D1E94099D2A4BBA1D57ED1F01A89707A382022,
+	LeanInput_GetKeyboardExists_m8177D65E95B35949D86639D2DBC7B174DB94173D,
+	LeanGuide_get_Icon_m25673F1F5D25EE98C81375D95C904485194C0998,
+	LeanGuide_get_Version_mF3D528BD1854D9C0B5BAC57CFE50EF688DC7DE51,
+	LeanGuide__ctor_mE81BC3E146C21ABE4FE5A72FE9E6C250161118FD,
+	LeanLinkTo_set_Link_m42FBB5C11C6DE29069AA540EDC379038B76FF41B,
+	LeanLinkTo_get_Link_m7EA271D4A0344353BD41249AA8F8BF5B824B360A,
+	LeanLinkTo_Update_mAB559E652325AC2C8812CF71C1DDE73ABBDAC961,
+	LeanLinkTo_OnPointerClick_mF10F593C01597DF51ABF5D85AF5299C2528D53D9,
+	LeanLinkTo_GetCurrentLevel_mE9DBA2BB90C48653A2D3612230650DA80676701D,
+	LeanLinkTo_GetLevelCount_mB72F33FA63FCE2737C4921D3C893C2B9F8048DAA,
+	LeanLinkTo_LoadLevel_m431770D7FD5812526D3DB3D1537AC26018F96F54,
+	LeanLinkTo__ctor_m3072A3056CDC89CB5D4D81C65B67A42021CD0353,
+	LeanUpgradeEventSystem__ctor_mA5C2A5813F15E2D67C039C42371185DB6DDA18F3,
 };
 static const int32_t s_InvokerIndices[68] = 
 {
-	23,
-	23,
-	23,
-	10,
-	37,
-	1038,
-	1677,
-	1677,
-	1033,
-	1678,
-	1679,
-	1680,
-	1681,
-	1682,
-	1683,
-	1684,
-	1685,
-	56,
-	1686,
-	23,
-	23,
-	23,
-	3,
-	1687,
-	1688,
-	1689,
-	1690,
-	23,
-	281,
-	281,
-	1043,
-	23,
-	23,
-	23,
-	23,
-	23,
-	1028,
-	23,
+	3034,
+	3034,
+	3034,
+	2963,
+	1705,
+	2261,
+	1154,
+	1154,
+	1466,
+	188,
+	770,
+	187,
+	761,
+	475,
+	780,
+	776,
+	1147,
+	935,
+	190,
+	3034,
+	3034,
+	3034,
+	4758,
+	1158,
+	477,
+	1155,
+	3617,
+	3034,
+	2479,
+	2479,
+	2498,
+	3034,
+	3034,
+	3034,
+	3034,
+	3034,
+	2500,
+	3034,
 	-1,
-	376,
+	4243,
 	-1,
-	1,
-	1691,
-	1692,
-	310,
-	1693,
-	1198,
-	46,
-	46,
-	46,
-	46,
-	46,
-	46,
-	1060,
-	49,
-	49,
-	14,
-	14,
-	23,
-	32,
-	10,
-	23,
-	26,
-	310,
-	310,
-	121,
-	23,
-	23,
+	4110,
+	3347,
+	3159,
+	4730,
+	3386,
+	4755,
+	4637,
+	4637,
+	4637,
+	4637,
+	4637,
+	4637,
+	4750,
+	4747,
+	4747,
+	2980,
+	2980,
+	3034,
+	2438,
+	2963,
+	3034,
+	2454,
+	4730,
+	4730,
+	4692,
+	3034,
+	3034,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[2] = 
 {
@@ -303,17 +295,20 @@ static const Il2CppTokenRangePair s_rgctxIndices[2] =
 };
 static const Il2CppRGCTXDefinition s_rgctxValues[4] = 
 {
-	{ (Il2CppRGCTXDataType)1, 20561 },
-	{ (Il2CppRGCTXDataType)3, 18847 },
-	{ (Il2CppRGCTXDataType)2, 20561 },
-	{ (Il2CppRGCTXDataType)2, 20562 },
+	{ (Il2CppRGCTXDataType)1, 152 },
+	{ (Il2CppRGCTXDataType)3, 21395 },
+	{ (Il2CppRGCTXDataType)2, 152 },
+	{ (Il2CppRGCTXDataType)2, 153 },
 };
-extern const Il2CppCodeGenModule g_LeanCommonCodeGenModule;
-const Il2CppCodeGenModule g_LeanCommonCodeGenModule = 
+extern const CustomAttributesCacheGenerator g_LeanCommon_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_LeanCommon_CodeGenModule;
+const Il2CppCodeGenModule g_LeanCommon_CodeGenModule = 
 {
 	"LeanCommon.dll",
 	68,
 	s_methodPointers,
+	0,
+	NULL,
 	s_InvokerIndices,
 	0,
 	NULL,
@@ -321,5 +316,10 @@ const Il2CppCodeGenModule g_LeanCommonCodeGenModule =
 	s_rgctxIndices,
 	4,
 	s_rgctxValues,
+	NULL,
+	g_LeanCommon_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
+	NULL,
 	NULL,
 };

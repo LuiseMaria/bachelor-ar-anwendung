@@ -87,6 +87,8 @@ static NSLock* currentRequestsLock;
         NSInteger transmitted = [outputStream write: data maxLength: dataSize];
         if (transmitted > 0)
             UnityWebRequestConsumeUploadData(udata, (unsigned)transmitted);
+        else if (transmitted < 0)
+            break;
         switch (task.state)
         {
             case NSURLSessionTaskStateCanceling:
@@ -98,6 +100,7 @@ static NSLock* currentRequestsLock;
         }
     }
     [outputStream close];
+    UnityWebRequestRelease(udata);
 }
 
 - (id)init:(void*)udata
@@ -262,6 +265,7 @@ static NSLock* currentRequestsLock;
     if (error != nil)
         UnityReportWebRequestNetworkError(urequest.udata, (int)[error code]);
     UnityReportWebRequestFinishedLoadingData(urequest.udata);
+    UnityWebRequestRelease(urequest.udata);
 }
 
 @end
@@ -277,13 +281,14 @@ extern "C" void* UnityCreateWebRequestBackend(void* udata, const char* methodStr
             {
                 webOperationQueue = [[NSOperationQueue alloc] init];
                 webOperationQueue.name = @"com.unity3d.WebOperationQueue";
+                webOperationQueue.qualityOfService = NSQualityOfServiceUtility;
 
                 currentRequests = [[NSMutableArray<UnityURLRequest*> alloc] init];
                 currentRequestsLock = [[NSLock alloc] init];
 
                 NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
                 UnityWebRequestDelegate* delegate = [[UnityWebRequestDelegate alloc] init];
-                unityWebRequestSession = [NSURLSession sessionWithConfiguration: config delegate: delegate delegateQueue: webOperationQueue];
+                unityWebRequestSession = [NSURLSession sessionWithConfiguration: config delegate: delegate delegateQueue: nil];
             }
         });
 
@@ -301,8 +306,8 @@ extern "C" void UnitySendWebRequest(void* connection, unsigned length, unsigned 
     @autoreleasepool
     {
         UnityURLRequest* request = (__bridge UnityURLRequest*)connection;
-        request.wantCertificateCallback = wantCertificateCallback;
         request.timeoutInterval = timeoutSec;
+        request.wantCertificateCallback = wantCertificateCallback;
 
         NSOutputStream* outputStream = nil;
         if (length > 0)
@@ -356,4 +361,31 @@ extern "C" void UnityCancelWebRequest(void* connection)
                 }
         }];
     }
+}
+
+extern "C" void UnityWebRequestClearCookieCache(const char* domain)
+{
+    NSArray<NSHTTPCookie*>* cookies;
+    NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    if (domain == NULL)
+        cookies = [cookieStorage cookies];
+    else
+    {
+        NSURL* url = [NSURL URLWithString: [NSString stringWithUTF8String: domain]];
+        if (url.path == nil || [url.path isEqualToString: [NSString string]])
+        {
+            NSMutableArray<NSHTTPCookie*>* hostCookies = [[NSMutableArray<NSHTTPCookie *> alloc] init];
+            cookies = [cookieStorage cookies];
+            NSUInteger cookieCount = [cookies count];
+            for (unsigned i = 0; i < cookieCount; ++i)
+                if ([cookies[i].domain isEqualToString: url.host])
+                    [hostCookies addObject: cookies[i]];
+            cookies = hostCookies;
+        }
+        else
+            cookies = [cookieStorage cookiesForURL: url];
+    }
+    NSUInteger cookieCount = [cookies count];
+    for (int i = 0; i < cookieCount; ++i)
+        [cookieStorage deleteCookie: cookies[i]];
 }
