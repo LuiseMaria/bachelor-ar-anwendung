@@ -16,7 +16,10 @@ public class StartModalComponent : MonoBehaviour {
     private Button startOnOriginalObject = default;
  
     [SerializeField]
-    private Canvas CanvasWithLabelRingAndLocator = default;
+    private Canvas CanvasWithLabel = default;
+
+    [SerializeField]
+    private Canvas CanvaswithLocator = default;
     
     [SerializeField]
     private Canvas CanvasWithUIButtons = default;
@@ -24,12 +27,20 @@ public class StartModalComponent : MonoBehaviour {
     [SerializeField]
     private Canvas CanvasModal = default;
 
+    [SerializeField]
+    private Transform imageTarget = default;
+
     public bool isDigitalTwin;
 
     public bool targetFound;
 
+    private Vector3 _followOffsetImageTarget;
+
     // Start is called before the first frame update
     void Start() {
+
+        _followOffsetImageTarget = PlateGameObject.transform.position - imageTarget.transform.position;
+        Debug.Log(_followOffsetImageTarget + " _followOffsetImageTarget");
         setEverythingInactiveOnStart();
 
         startOnOriginalObject.onClick.AddListener( () => {
@@ -48,27 +59,32 @@ public class StartModalComponent : MonoBehaviour {
             setLabelActiveAndOtherStuffInactive();
             PlateGameObject.GetComponent<LeanTouch>().enabled = true;
             PlateGameObject.transform.GetChild(0).gameObject.SetActive(true);
+         //   setPosition();
            
         });
     }
 
-    // Update is called once per frame
-    void Update() {
-    }
+//    void setPosition() {
+//         Vector3 targetPosition;
+//         targetPosition = imageTarget.transform.position + _followOffsetImageTarget;
+//         PlateGameObject.transform.position += (targetPosition - PlateGameObject.transform.position);
+//     }
 
     void setEverythingInactiveOnStart() {
         transform.gameObject.SetActive(false);
         PlateGameObject.SetActive(false);
-        CanvasWithLabelRingAndLocator.gameObject.SetActive(false);
+        CanvasWithLabel.gameObject.SetActive(false);
+        CanvaswithLocator.gameObject.SetActive(false);
         CanvasWithUIButtons.gameObject.SetActive(false);
         CanvasModal.gameObject.SetActive(false);
     }
 
     void setLabelActiveAndOtherStuffInactive() {
-        CanvasWithLabelRingAndLocator.gameObject.SetActive(true);
-       // CanvasWithLabelRingAndLocator.transform.GetChild(0).gameObject.SetActive(true);
-        CanvasWithLabelRingAndLocator.transform.GetChild(1).gameObject.SetActive(false);
+        CanvasWithLabel.gameObject.SetActive(true);
+        CanvaswithLocator.gameObject.SetActive(true);
+        CanvaswithLocator.transform.GetChild(1).gameObject.SetActive(false);
     }
+    
     // recognized Vuforia marker
     public void onTargetFound(bool isFound) {
         targetFound = isFound;

@@ -24,8 +24,12 @@ public class DynamicPanelController : MonoBehaviour {
     [SerializeField]
     private Transform toggle = default;
 
-    private float toggleWidth;
+    public ButtonComponent buttonComponentScript;
 
+    [SerializeField]
+    private GameObject imageTargetList = default;
+
+    private float toggleWidth;
 
     private void Awake(){
         srollSnapComponent = GetComponent<SimpleScrollSnap>();
@@ -37,6 +41,7 @@ public class DynamicPanelController : MonoBehaviour {
         modalCanvas.gameObject.SetActive(true);
         setModalImageAndText(EventSystem.current.currentSelectedGameObject.transform.parent.name);
         srollSnapComponent.GoToPanel(0);
+        getLocationPin();
     }
 
     private void setModalImageAndText(string selectedRing){
@@ -72,6 +77,32 @@ public class DynamicPanelController : MonoBehaviour {
                 description.text = linesInFile[i+1];
             } else {
                 description.text = "";
+            }
+        }
+    }
+
+    private void getLocationPin(){
+        for(int i = 0; i < srollSnapComponent.NumberOfPanels; i++) {
+            if(buttonComponentScript.firstRing && (i >= imageTargetList.transform.GetChild(0).childCount)){
+                for(int index = 0; index < imageTargetList.transform.GetChild(0).childCount; index++){
+                    SlideList.transform.GetChild(i).GetChild(4).gameObject.SetActive(false);
+                }
+            } else if(buttonComponentScript.secondRing && (i >= imageTargetList.transform.GetChild(1).childCount)){
+                for(int index = 0; index < imageTargetList.transform.GetChild(1).childCount; index++){
+                    SlideList.transform.GetChild(i).GetChild(4).gameObject.SetActive(false);
+                }
+            } else if(buttonComponentScript.thirdRing && (i >= imageTargetList.transform.GetChild(2).childCount)){
+                for(int index = 0; index < imageTargetList.transform.GetChild(2).childCount; index++){
+                    SlideList.transform.GetChild(i).GetChild(4).gameObject.SetActive(false);
+                }
+            } else if(buttonComponentScript.fourthRing && (i >= imageTargetList.transform.GetChild(3).childCount)){
+                for(int index = 0; index < imageTargetList.transform.GetChild(3).childCount; index++){
+                    SlideList.transform.GetChild(i).GetChild(4).gameObject.SetActive(false);
+                }
+            } else if(buttonComponentScript.fifthRing && (i >= imageTargetList.transform.GetChild(4).childCount)){
+                for(int index = 0; index < imageTargetList.transform.GetChild(4).childCount; index++){
+                    SlideList.transform.GetChild(i).GetChild(4).gameObject.SetActive(false);
+                }
             }
         }
     }

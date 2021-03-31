@@ -66,7 +66,10 @@ public class ButtonComponent : MonoBehaviour {
                 DisableButtons(false, buttonParent);
                 ToggleButton(buttonParent, index);
                 handleRingSelection(index);
+            } else {
+                modalPanelComponentScript.openModalButtonAddOnListener();
             }
+            
         });
     }
     
@@ -82,7 +85,7 @@ public class ButtonComponent : MonoBehaviour {
     private void DisableButtons(bool enable, Transform buttonParent) {
             buttonParent.GetChild(indexOfBackButton).gameObject.SetActive(!enable);
             buttonParent.GetChild(indexOfModalButton).gameObject.SetActive(!enable);
-            for(int buttonIndex = 0; buttonIndex < childCount; ++buttonIndex ){
+            for(int buttonIndex = 0; buttonIndex < childCount; ++buttonIndex ) {
                 gameObject.transform.GetChild(buttonIndex).gameObject.SetActive(enable);
             }
         isActive = !isActive;
@@ -98,10 +101,12 @@ public class ButtonComponent : MonoBehaviour {
     private void handleRingSelection(int indexOfRing){
         highlightedRing.transform.parent.gameObject.SetActive(!highlightedRing.transform.parent.gameObject.activeSelf);
         highlightedRingInside.gameObject.SetActive(true);
+        highlightedRing.gameObject.SetActive(true);
         firstRing = false;
         secondRing = false;
         thirdRing = false;
         fourthRing = false;
+        fifthRing = false;
         if(indexOfRing == 1){ //Planeten&Krieger
             secondRing = true;
             highlightedRing.image.rectTransform.sizeDelta = new Vector2(0.6f, 0.6f);
@@ -114,6 +119,10 @@ public class ButtonComponent : MonoBehaviour {
             fourthRing = true;
             highlightedRing.image.rectTransform.sizeDelta = new Vector2(1.1f, 1.1f);
             highlightedRingInside.image.rectTransform.sizeDelta = new Vector2(0.78f, 0.78f);
+        } else if(indexOfRing == 4){ // Inschriften
+            fifthRing = true;
+            highlightedRingInside.gameObject.SetActive(false);
+            highlightedRing.gameObject.SetActive(false);
         } else if(indexOfRing == 0){ // Sphinghen & Greife
             firstRing = true;
             highlightedRingInside.gameObject.SetActive(false);
